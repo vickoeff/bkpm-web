@@ -1,4 +1,4 @@
-<template>
+<template v-if=false>
     <div class="about-area ptb-100">
         <div class="container">
             <div class="row align-items-center">
@@ -6,7 +6,7 @@
                     <div class="about-content">
                         <span class="sub-title">ABOUT JEXA</span>
                         <h2>A Few Words About Us</h2>
-                        <p>Cloud based storage for your data backup just log in with your mail account from play store and using whatever you want for your business purpose orem ipsum dummy text. Never missyour chance its just began.</p>
+                        <p>{{ tentang.bkpm }}</p>
                         <div class="features-text">
                             <h6>Our App</h6>
                             <p>Most provabily best you can trust on it, just log in with your mail account from play store and using whatever you want for your business.</p>
@@ -31,8 +31,26 @@
     </div>
 </template>
 
+
 <script>
+import axios from 'axios'
 export default {
-    name: 'About'
+    name: 'About',
+    data() {
+        return {
+            tentang: {},
+            isLoading: true
+        }
+    },
+    mounted () {
+        setTimeout(() => {
+            this.isLoading = false
+            axios
+            .get('https://cms-penkin.denican.id/api/tentang')
+            .then(response => {
+                this.tentang = response.data.data[0]
+            })
+        }, 3000)
+    }
 }
 </script>
