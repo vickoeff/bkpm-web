@@ -1,0 +1,29 @@
+<template>
+    <div class="new-app-progress-wrap-area ptb-100">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="new-app-progress-image text-center">
+                        <img src="../../assets/images/more-home/progress/progress-2.png" alt="app-img">
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12">
+                    <div class="new-app-progress-content">
+                        <span class="sub-title">APP PROGRESS</span>
+                        <h2>Set Up The Challenges and Track Your Progress</h2>
+                        <p>Cloud based storage for your data backup just log in with your mail account from play store and using whatever you want for your business purpose orem ipsum dummy text. never missyour chance its just began. backup just log in with your mail account from.</p>
+                        <p>Most provabily best  for your data backup just log in with your mail account from play store and using whatever you want for your business purpose orem ipsum dummy  backup just log in with your mail account from.</p>
+                        <router-link to="/app-download" class="default-btn">Start Free Trial</router-link>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'ChallengesAndTrack'
+}
+</script>
