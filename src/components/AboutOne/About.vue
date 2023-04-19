@@ -4,20 +4,15 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="about-content">
-                        <span class="sub-title">ABOUT JEXA</span>
-                        <h2>A Few Words About Us</h2>
-                        <p>Cloud based storage for your data backup just log in with your mail account from play store and using whatever you want for your business purpose orem ipsum dummy text. Never missyour chance its just began.</p>
+                        <span class="sub-title">ABOUT BKPM</span>
+                            <div v-html="definisiKegiatan"></div>
                         <div class="features-text">
-                            <h6>Our App</h6>
-                            <p>Most provabily best you can trust on it, just log in with your mail account from play store and using whatever you want for your business.</p>
+                            <h6>Tujuan</h6>
+                            <div v-html="tujuan"></div>
                         </div>
                         <div class="features-text">
-                            <h6>Our Mission</h6>
-                            <p>Cloud based storage for your data backup just log in with your mail account from play store and using whatever you want for your business purpose orem ipsum dummy of your business purpose text.</p>
-                        </div>
-                        <div class="btn-box">
-                            <router-link to="/contact" class="default-btn">Start Free Trial</router-link>
-                            <router-link to="/features-one" class="link-btn">See All Features</router-link>
+                            <h6>Manfaat</h6>
+                            <div v-html="manfaat"></div>
                         </div>
                     </div>
                 </div>
@@ -32,7 +27,28 @@
 </template>
 
 <script>
+import getTentang from '../../../api/getTentang'
 export default {
-    name: 'About'
+    name: 'About',
+    data() {
+        return {
+            definisiKegiatan: null,
+            tujuan: null,
+            manfaat: null,
+            bkpm: null,
+        }
+    },
+    mounted () {
+        this.getData()
+    },
+    methods: {
+        async getData() {
+            var data = await getTentang()
+            this.definisiKegiatan = data.definisi_kegiatan
+            this.tujuan = data.tujuan
+            this.manfaat = data.manfaat
+            this.bkpm = data.bkpm
+        }
+    }
 }
 </script>
