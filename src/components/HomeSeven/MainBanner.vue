@@ -5,22 +5,13 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="new-app-main-banner-content">
                         <div class="content">
-                            <div class="name-big-text">Jexa</div>
-                            <span class="sub-title">#Get Your 14 Days Free Trial</span>
-                            <h1>Manage All Of Your Stuff Using A Jexa</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id tincidunt eifend odio viverra diam aliquet donec again.</p>
+                            <div class="name-big-text">BKPM</div>
+                            <h1>Kementrian Investasi / BKPM</h1>
+                            <p>Badan Koordinasi Penanaman Modal adalah Lembaga Pemerintah Non Departemen Indonesia yang bertugas untuk merumuskan kebijakan pemerintah di bidang penanaman modal, baik dari dalam negeri maupun luar negeri.</p>
 
                             <div class="app-btn-box">
-                                <a href="#" class="applestore-btn" target="_blank">
-                                    <img src="../../assets/images/apple-store.png" alt="image">
-                                    Download on the
-                                    <span>Apple Store</span>
-                                </a>
-
-                                <a href="#" class="playstore-btn" target="_blank">
-                                    <img src="../../assets/images/play-store.png" alt="image">
-                                    Get It On
-                                    <span>Google Play</span>
+                                <a href="#" class="default-btn" target="_blank">
+                                    Selengkapnya
                                 </a>
                             </div>
 
@@ -34,6 +25,9 @@
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <div class="new-app-main-banner-image" data-aos="fade-up" data-aos-duration="2000">
+                        <div class="banner-slider">
+                            
+                        </div>
                         <img src="../../assets/images/more-home/banner/banner-1.png" alt="image">
 
                         <div class="wrap-shape-1">
@@ -51,6 +45,9 @@
         </div>
         <div class="new-app-banner-strock-shape">
             <img src="../../assets/images/more-home/banner/strock.png" alt="image">
+        </div>
+        <div class="new-app-main-banner-wrap-shape">
+            <img src="../../assets/images/more-home/banner/shape-5.png" alt="image">
         </div>
     </div>
 </template>

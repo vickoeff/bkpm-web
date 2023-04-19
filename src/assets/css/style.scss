@@ -1023,7 +1023,7 @@ New Demo CSS
 
 /* New App Main Banner Area CSS */
 .new-app-main-banner-area {
-    background-image: url(../../assets/images/more-home/banner/banner-bg.jpg);
+    background-image: url(../../assets/images/more-home/banner/banner-bg_new.jpg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1069,7 +1069,7 @@ New Demo CSS
         h1 {
             color: var(--blackColor);
             font-size: 62px;
-            line-height: 1.4;
+            line-height: 1.1;
             margin-bottom: 10px;
         }
         p {
@@ -1231,6 +1231,10 @@ New Demo CSS
             }
         }
     }
+}
+.banner-slider {
+    border-radius: 100%;
+    overflow: hidden;
 }
 .new-app-main-banner-image {
     position: relative;
