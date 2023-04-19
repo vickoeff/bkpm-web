@@ -30,11 +30,15 @@
 
 <script>
 import TrustedBy from '../HomeOne/TrustedBy'
+import getGallery from '../../../api/getGallery'
 
 export default {
     name: 'MainBanner',
     components: {
         TrustedBy
-    }
+    },
+    mounted: async () => {
+        console.log(await getGallery());
+    },
 }
 </script>
