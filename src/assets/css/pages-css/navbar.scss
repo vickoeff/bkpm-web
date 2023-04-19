@@ -305,12 +305,12 @@
     .navbar {
         padding: 0;
         position: inherit;
-
         .navbar-brand {
             font-size: inherit;
             line-height: 1;
             padding: 0;
             img {
+                max-width: 104px;
                 &:last-child {
                     display: none;
                 }
