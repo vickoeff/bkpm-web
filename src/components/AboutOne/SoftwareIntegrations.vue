@@ -4,11 +4,9 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="software-integrations-content white-color">
-                        <span class="sub-title">SOFTWARE INTEGRATIONS</span>
-                        <h2>Easy & Perfect Solution With Latest Software Integrations</h2>
-                        <p>Cloud based storage for your data backup just log in with your mail account from play store and using whatever you want for your business purpose orem ipsum dummy text. never missyour chance its just began. backup just log in with your mail account from.</p>
-                        <p>Most provabily best  for your data backup just log in with your mail account from play store and using whatever you want for your business purpose orem ipsum dummy.</p>
-                        <router-link to="/contact" class="default-btn">Get Started</router-link>
+                        <span class="sub-title">MANFAAT</span>
+                        <h2>Manfaat BKPM</h2>
+                        <div v-html="manfaat"></div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
@@ -45,7 +43,23 @@
 </template>
 
 <script>
+import getTentang from '../../../api/getTentang'
 export default {
-    name: 'SoftwareIntegrations'
+    name: 'SoftwareIntegrations',
+    data () {
+        return {
+            manfaat: null
+        }
+    },
+    mounted () {
+        this.getData()
+    },
+    methods: {
+        async getData() {
+            const data = await getTentang()
+            this.manfaat = data.manfaat
+
+        }
+    }
 }
 </script>

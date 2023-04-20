@@ -13,11 +13,9 @@
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <div class="app-progress-content text-white">
-                        <span class="sub-title">APP PROGRESS</span>
-                        <h2>Set Up The Challenges and Track Your Progress</h2>
-                        <p>Cloud based storage for your data backup just log in with your mail account from play store and using whatever you want for your business purpose orem ipsum dummy text. never missyour chance its just began. backup just log in with your mail account from.</p>
-                        <p>Most provabily best  for your data backup just log in with your mail account from play store and using whatever you want for your business purpose orem ipsum dummy  backup just log in with your mail account from.</p>
-                        <a href="#" class="default-btn">Start Free Trial</a>
+                        <span class="sub-title">TUJUAN</span>
+                        <h2>Tujuan BKPM</h2>
+                        <div v-html="tujuan"></div>
                     </div>
                 </div>
             </div>
@@ -26,7 +24,24 @@
 </template>
 
 <script>
+import getTentang from '../../../api/getTentang'
 export default {
-    name: 'ChallengesAndTrack'
+    name: 'ChallengesAndTrack',
+    data () {
+        return {
+            tujuan: null
+        }
+
+    },
+    mounted () {
+        this.getData()
+    },
+    methods: {
+        async getData() {
+            const data = await getTentang()
+            this.tujuan = data.tujuan
+
+        }
+    }
 }
 </script>
