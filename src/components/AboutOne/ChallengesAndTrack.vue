@@ -4,11 +4,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="app-progress-animation-image">
-                        <img src="../../assets/images/app-progress/app-progress1.png" alt="app-progress" data-aos="fade-down" data-aos-duration="1000">
-                        <img src="../../assets/images/app-progress/app-progress2.png" alt="app-progress" data-aos="fade-right" data-aos-duration="1000">
-                        <img src="../../assets/images/app-progress/app-progress3.png" alt="app-progress" data-aos="fade-left" data-aos-duration="1000">
-                        <img src="../../assets/images/app-progress/app-progress4.png" alt="app-progress" data-aos="fade-up" data-aos-duration="1000">
-                        <img src="../../assets/images/app-progress/progress-main.png" class="main-image" alt="app-progress">
+                        <img :src=image alt="app-progress" data-aos="fade-down" data-aos-duration="1000">
+                        <img :src=image class="main-image" alt="app-progress">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
@@ -25,11 +22,15 @@
 
 <script>
 import getTentang from '../../../api/getTentang'
+import getAboutImage from '../../../api/getAboutImage'
+import getGallery from '../../../api/getGallery'
 export default {
     name: 'ChallengesAndTrack',
     data () {
         return {
-            tujuan: null
+            tujuan: null,
+            image: null,
+            gallery: null
         }
 
     },
@@ -39,8 +40,11 @@ export default {
     methods: {
         async getData() {
             const data = await getTentang()
+            const image = await getAboutImage(1)
+            const galery = await getGallery()
             this.tujuan = data.tujuan
-
+            this.image = image[0].url_file
+            this.gallery = galery.data
         }
     }
 }
