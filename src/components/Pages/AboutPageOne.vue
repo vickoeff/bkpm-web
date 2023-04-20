@@ -3,13 +3,9 @@
         <Navbar />
         <PageTitle pageTitle="About Us" />
         <About />
-        <Funfacts />
         <ChallengesAndTrack />
-        <Stats />
+        <Abouts />
         <SoftwareIntegrations />
-        <OurTeam />
-        <CustomerReviews class="pt-0" />
-        <Partner class="bg-f9f9f9" />
         <Footer />
     </div>
 </template>
@@ -18,13 +14,9 @@
 import Navbar from '../Layout/Navbar'
 import PageTitle from '../Common/PageTitle'
 import About from '../AboutOne/About'
-import Funfacts from '../AboutOne/Funfacts'
+import Abouts from '../AboutOne/About'
 import ChallengesAndTrack from '../AboutOne/ChallengesAndTrack'
-import Stats from '../AboutOne/Stats'
 import SoftwareIntegrations from '../AboutOne/SoftwareIntegrations'
-import OurTeam from '../AboutOne/OurTeam'
-import CustomerReviews from '../Common/CustomerReviews'
-import Partner from '../Common/Partner'
 import Footer from '../Layout/Footer'
 
 export default {
@@ -33,13 +25,9 @@ export default {
         Navbar,
         PageTitle,
         About,
-        Funfacts,
         ChallengesAndTrack,
-        Stats,
+        Abouts,
         SoftwareIntegrations,
-        OurTeam,
-        CustomerReviews,
-        Partner,
         Footer,
     }
 }
