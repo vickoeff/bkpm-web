@@ -8,7 +8,7 @@
                 class="row justify-content-center"
             >
                 <a
-                    v-for="item in gallery"
+                    v-for="item in items"
                     :key="item.id"
                     :data-lg-size="item.size"
                     className="gallery-item"
@@ -110,7 +110,7 @@ export default {
     },
     data: () => ({
         plugins: [lgZoom],
-        gallery: null
+        items: null
     }),
     mounted () {
         this.getData()
@@ -124,7 +124,7 @@ export default {
         },
         async getData() {
             const galery = await getGallery()
-            this.gallery = galery.data
+            this.items = galery.data
         }
     },
 }
