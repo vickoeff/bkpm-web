@@ -2,10 +2,6 @@
     <div>
         <Navbar class="jexa-new-navbar-area" />
         <MainBanner />
-        <Features />
-        <About />
-        <IncludedBestFeatures />
-        <ChallengesAndTrack />
         <AppScreens />
         <GettingBestApp />
         <Video />
@@ -21,10 +17,6 @@
 <script>
 import Navbar from '../Layout/Navbar'
 import MainBanner from '../HomeSeven/MainBanner'
-import Features from '../HomeSeven/Features'
-import About from '../HomeSeven/About'
-import IncludedBestFeatures from '../HomeSeven/IncludedBestFeatures'
-import ChallengesAndTrack from '../HomeSeven/ChallengesAndTrack'
 import AppScreens from '../HomeSeven/AppScreens'
 import GettingBestApp from '../HomeSeven/GettingBestApp'
 import Video from '../HomeSeven/Video'
@@ -40,10 +32,6 @@ export default {
     components: {
         Navbar,
         MainBanner,
-        Features,
-        About,
-        IncludedBestFeatures,
-        ChallengesAndTrack,
         AppScreens,
         GettingBestApp,
         Video,
