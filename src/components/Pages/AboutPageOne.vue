@@ -1,7 +1,7 @@
 <template>
     <div>
         <Navbar />
-        <PageTitle pageTitle="About Us" />
+        <PageTitle pageTitle="Tentang" />
         <About />
         <ChallengesAndTrack />
         <Abouts />
@@ -14,7 +14,7 @@
 import Navbar from '../Layout/Navbar'
 import PageTitle from '../Common/PageTitle'
 import About from '../AboutOne/About'
-import Abouts from '../AboutOne/About'
+import Abouts from '../AboutOne/Abouts'
 import ChallengesAndTrack from '../AboutOne/ChallengesAndTrack'
 import SoftwareIntegrations from '../AboutOne/SoftwareIntegrations'
 import Footer from '../Layout/Footer'

@@ -36,7 +36,7 @@ export default {
         async getData() {
             const data = await getTentang()
             const image = await getAboutImage(6)
-            this.definisiKegiatan = data.bkpm
+            this.definisiKegiatan = data.definisi_kegiatan
             this.image = image[0].url_file
         }
     }
