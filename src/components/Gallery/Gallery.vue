@@ -8,15 +8,16 @@
                 class="row justify-content-center"
             >
                 <a
-                    v-for="item in items"
+                    v-for="item in gallery"
                     :key="item.id"
                     :data-lg-size="item.size"
                     className="gallery-item"
-                    :data-src="item.src"
+                    :data-src="item.url_file"
                     class="col-lg-4 col-md-6 col-sm-6"
+                    :data-sub-html=item.caption
                 >
                     <div class="single-gallery-item">
-                        <img className="img-responsive" :src="item.thumb" />
+                        <img className="img-responsive" :src="item.url_file" />
                     </div>
                 </a>
             </lightgallery>
@@ -92,6 +93,7 @@
 <script>
 import Lightgallery from 'lightgallery/vue';
 import lgZoom from 'lightgallery/plugins/zoom';
+import getGallery from '../../../api/getGallery';
 let lightGallery= null;
 
 export default {
@@ -108,54 +110,11 @@ export default {
     },
     data: () => ({
         plugins: [lgZoom],
-        items: [
-            {
-                id: '1',
-                src: require('../../assets/images/gallery/gallery1.jpg'),
-                thumb: require('../../assets/images/gallery/gallery1.jpg'),
-            },
-            {
-                id: '2',
-                src: require('../../assets/images/gallery/gallery2.jpg'),
-                thumb: require('../../assets/images/gallery/gallery2.jpg'),
-            },
-            {
-                id: '3',
-                src: require('../../assets/images/gallery/gallery3.jpg'),
-                thumb: require('../../assets/images/gallery/gallery3.jpg'),
-            },
-            {
-                id: '4',
-                src: require('../../assets/images/gallery/gallery4.jpg'),
-                thumb: require('../../assets/images/gallery/gallery4.jpg'),
-            },
-            {
-                id: '5',
-                src: require('../../assets/images/gallery/gallery5.jpg'),
-                thumb: require('../../assets/images/gallery/gallery5.jpg'),
-            },
-            {
-                id: '6',
-                src: require('../../assets/images/gallery/gallery6.jpg'),
-                thumb: require('../../assets/images/gallery/gallery6.jpg'),
-            },
-            {
-                id: '7',
-                src: require('../../assets/images/gallery/gallery7.jpg'),
-                thumb: require('../../assets/images/gallery/gallery7.jpg'),
-            },
-            {
-                id: '8',
-                src: require('../../assets/images/gallery/gallery8.jpg'),
-                thumb: require('../../assets/images/gallery/gallery8.jpg'),
-            },
-            {
-                id: '9',
-                src: require('../../assets/images/gallery/gallery9.jpg'),
-                thumb: require('../../assets/images/gallery/gallery9.jpg'),
-            },
-        ],
+        gallery: null
     }),
+    mounted () {
+        this.getData()
+    },
     methods: {
         onInit: (detail) => {
             lightGallery = detail.instance;
@@ -163,6 +122,10 @@ export default {
         onBeforeSlide: () => {
             console.log('calling before slide');
         },
+        async getData() {
+            const galery = await getGallery()
+            this.gallery = galery.data
+        }
     },
 }
 </script>
