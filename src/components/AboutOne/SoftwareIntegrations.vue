@@ -13,7 +13,7 @@
                     <div class="software-integrations-list">
                         <img src="../../assets/images/shape/border.png" alt="border">
                         <ul>
-                            <li v-for="item in gallery" data-aos="fade-down">
+                            <li v-for="item in gallery" data-aos="fade-down" :key="item.id">
                                 <img :src="item.url_file" class="atlassian" alt="atlassian">
                             </li>
                         </ul>

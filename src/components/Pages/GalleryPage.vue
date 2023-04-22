@@ -1,9 +1,8 @@
 <template>
     <div>
         <Navbar />
-        <PageTitle pageTitle="How It Works" />
+        <PageTitle pageTitle="Gallery" />
         <Gallery />
-        <AppDownload />
         <Footer />
     </div>
 </template>
@@ -12,7 +11,6 @@
 import Navbar from '../Layout/Navbar'
 import PageTitle from '../Common/PageTitle'
 import Gallery from '../Gallery/Gallery'
-import AppDownload from '../Common/AppDownload'
 import Footer from '../Layout/Footer'
 
 export default {
@@ -21,7 +19,6 @@ export default {
         Navbar,
         PageTitle,
         Gallery,
-        AppDownload,
         Footer,
     }
 }
