@@ -1,17 +1,8 @@
 import { createWebHistory, createRouter } from "vue-router";
 
 // All Pages
-import HomePageOne from "../components/Pages/HomePageOne";
-import HomePageTwo from "../components/Pages/HomePageTwo";
-import HomePageThree from "../components/Pages/HomePageThree";
-import HomePageFour from "../components/Pages/HomePageFour";
-import HomePageFive from "../components/Pages/HomePageFive";
-import HomePageSix from "../components/Pages/HomePageSix";
 import HomePageSeven from "../components/Pages/HomePageSeven";
-import HomePageEight from "../components/Pages/HomePageEight";
-import HomePageNine from "../components/Pages/HomePageNine";
 import AboutPageOne from "../components/Pages/AboutPageOne";
-import AboutPageTwo from "../components/Pages/AboutPageTwo";
 import FeaturesPageOne from "../components/Pages/FeaturesPageOne";
 import FeaturesPageTwo from "../components/Pages/FeaturesPageTwo";
 import TeamPageOne from "../components/Pages/TeamPageOne";
@@ -38,17 +29,8 @@ import BlogDetailsPage from "../components/Pages/BlogDetailsPage";
 import ContactPage from "../components/Pages/ContactPage";
 
 const routes = [
-  { path: "/", component: HomePageOne },
-  { path: "/home-two", component: HomePageTwo },
-  { path: "/home-three", component: HomePageThree },
-  { path: "/home-four", component: HomePageFour },
-  { path: "/home-five", component: HomePageFive },
-  { path: "/home-six", component: HomePageSix },
-  { path: "/home-seven", component: HomePageSeven },
-  { path: "/home-eight", component: HomePageEight },
-  { path: "/home-nine", component: HomePageNine },
-  { path: "/about-simple", component: AboutPageOne },
-  { path: "/about-modern", component: AboutPageTwo },
+  { path: "/", component: HomePageSeven },
+  { path: "/about", component: AboutPageOne },
   { path: "/features-one", component: FeaturesPageOne },
   { path: "/features-two", component: FeaturesPageTwo },
   { path: "/team-one", component: TeamPageOne },
