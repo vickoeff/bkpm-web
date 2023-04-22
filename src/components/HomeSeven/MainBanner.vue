@@ -6,7 +6,7 @@
                     <div class="new-app-main-banner-content">
                         <div class="content">
                             <div class="name-big-text">BKPM</div>
-                            <h1>Kementrian Investasi / BKPM</h1>
+                            <h1>Kementerian Investasi / BKPM</h1>
                             <p>Badan Koordinasi Penanaman Modal adalah Lembaga Pemerintah Non Departemen Indonesia yang bertugas untuk merumuskan kebijakan pemerintah di bidang penanaman modal, baik dari dalam negeri maupun luar negeri.</p>
 
                             <div class="app-btn-box">
@@ -26,9 +26,17 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="new-app-main-banner-image" data-aos="fade-up" data-aos-duration="2000">
                         <div class="banner-slider">
-                            
+                            <carousel :items-to-show="1.5">
+                                <slide v-for="slide, idx in slider" :key="idx">
+                                    <img :src="slide.url_file" alt="">
+                                </slide>
+
+                                <template #addons>
+                                <navigation />
+                                <pagination />
+                                </template>
+                            </carousel>
                         </div>
-                        <img src="../../assets/images/more-home/banner/banner-1.png" alt="image">
 
                         <div class="wrap-shape-1">
                             <img src="../../assets/images/more-home/banner/shape-1.png" alt="image">
@@ -54,11 +62,29 @@
 
 <script>
 import TrustedBy from '../HomeSeven/TrustedBy'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import getSlider from '../../../api/getSlider'
 
 export default {
     name: 'MainBanner',
     components: {
-        TrustedBy
-    }
+        TrustedBy,
+        Carousel,
+        Slide,
+        Pagination,
+        Navigation,
+    },
+    data() {
+        return {
+            slider: [],
+        }
+    },
+    mounted: async function() {
+        const res = await getSlider();
+        this.slider = res.data;
+    },
+    // methods: {
+
+    // }
 }
 </script>
