@@ -10,31 +10,22 @@
                             <p>Badan Koordinasi Penanaman Modal adalah Lembaga Pemerintah Non Departemen Indonesia yang bertugas untuk merumuskan kebijakan pemerintah di bidang penanaman modal, baik dari dalam negeri maupun luar negeri.</p>
 
                             <div class="app-btn-box">
-                                <a href="#" class="default-btn" target="_blank">
-                                    Selengkapnya
-                                </a>
+                                <router-link to="/about" class="default-btn">Selengkapnya</router-link>
                             </div>
 
                             <div class="content-shape">
                                 <img src="../../assets/images/more-home/banner/content-shape.png" alt="image">
                             </div>
                         </div>
-
-                        <TrustedBy />
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <div class="new-app-main-banner-image" data-aos="fade-up" data-aos-duration="2000">
                         <div class="banner-slider">
-                            <carousel :items-to-show="1.5">
+                            <carousel  :items-to-show="1" :autoplay="2400" :transition="700" :wrapAround="true">
                                 <slide v-for="slide, idx in slider" :key="idx">
-                                    <img :src="slide.url_file" alt="">
+                                    <img class="slide-image" :src="slide.url_file" alt="">
                                 </slide>
-
-                                <template #addons>
-                                <navigation />
-                                <pagination />
-                                </template>
                             </carousel>
                         </div>
 
@@ -61,30 +52,29 @@
 </template>
 
 <script>
-import TrustedBy from '../HomeSeven/TrustedBy'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import { Carousel, Slide } from 'vue3-carousel'
 import getSlider from '../../../api/getSlider'
 
 export default {
     name: 'MainBanner',
     components: {
-        TrustedBy,
         Carousel,
         Slide,
-        Pagination,
-        Navigation,
     },
     data() {
         return {
             slider: [],
         }
     },
-    mounted: async function() {
-        const res = await getSlider();
-        this.slider = res.data;
+    beforeMount() {
+        this.getDataSlide();
     },
-    // methods: {
-
-    // }
+    methods: {
+        async getDataSlide() {
+            const res = await getSlider();
+            this.slider = res.data;
+            console.log("res data:", res);
+        }
+    }
 }
 </script>

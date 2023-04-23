@@ -31,7 +31,7 @@
                                 <router-link to="/gallery" class="nav-link">Galeri</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link to="/contact" class="nav-link">Contact</router-link>
+                                <router-link to="/contact" class="nav-link">Kontak</router-link>
                             </li>
                         </ul>
                     </div>

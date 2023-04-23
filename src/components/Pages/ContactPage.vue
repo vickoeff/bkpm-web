@@ -4,7 +4,7 @@
         <PageTitle pageTitle="Contact Us" />
         <Contact />
         <ContactInfo />
-        <FooterStyleTwo class="footer-style-two bg-black" />
+        <Footer class="footer-style-two bg-black" />
     </div>
 </template>
 
@@ -13,7 +13,7 @@ import Navbar from '../Layout/Navbar'
 import PageTitle from '../Common/PageTitle'
 import Contact from '../Contact/Contact'
 import ContactInfo from '../Contact/ContactInfo'
-import FooterStyleTwo from '../Layout/FooterStyleTwo'
+import Footer from '../Layout/Footer'
 
 export default {
     name: 'BlogPageOne',
@@ -22,7 +22,7 @@ export default {
         PageTitle,
         Contact,
         ContactInfo,
-        FooterStyleTwo,
+        Footer,
     }
 }
 </script>

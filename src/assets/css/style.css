@@ -1078,11 +1078,6 @@ New Demo CSS
   margin: auto;
 }
 
-.banner-slider {
-  border-radius: 100%;
-  overflow: hidden;
-}
-
 .new-app-main-banner-image {
   position: relative;
   z-index: 1;
@@ -3595,6 +3590,7 @@ New Demo CSS
   position: relative;
   z-index: 1;
   padding-top: 370px;
+  margin-top: 20vh;
 }
 .footer-area-style-with-black-color .single-footer-widget {
   margin-bottom: 25px;
@@ -3654,6 +3650,9 @@ New Demo CSS
 }
 .footer-wrap-area .single-footer-widget {
   margin-bottom: 25px;
+}
+.footer-wrap-area .single-footer-widget .logo {
+  max-width: 160px;
 }
 .footer-wrap-area .single-footer-widget p {
   color: var(--whiteColor);
