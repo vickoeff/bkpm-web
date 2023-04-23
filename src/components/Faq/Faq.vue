@@ -5,8 +5,7 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="faq-sidebar">
                         <ul>
-                            <li><a href="faq"><span>instrumen</span></a></li>
-                            <li><a href="faq"><span>aplikasi</span></a></li>
+                            <li v-for="item in tipe" :key="item.id"><a href="faq"><span>{{item}}</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -43,16 +42,28 @@ export default {
     },
     data() {
         return {
-            items: null
+            items: null,
+            tipe: null
         }
     },
     mounted: function () {
         this.getData()
+        this.getTipe()
     },
     methods:{
         async getData() {
            const faq = await getFaq()
            this.items = faq.data
+        },
+        async getTipe() {
+           const faq = await getFaq()
+           let tipe = []
+           for(let i = 0; i < faq.data.length; i++) {
+               if(!tipe.includes(faq.data[i].tipe)) {
+                   tipe.push(faq.data[i].tipe)
+               }
+           }
+           this.tipe = tipe
         }
     }
 }
