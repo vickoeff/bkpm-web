@@ -3,7 +3,7 @@
         <div class="container">
             <div class="footer-content">
                 <router-link to="/" class="logo">
-                    <img src="../../assets/images/logo2.png" alt="logo">
+                    <img src="../../assets/images/Logo_Kementerian_Investasi_BKPM_Warna_Square.png" alt="logo">
                 </router-link>
                 <ul class="social-links">
                     <li><a href="https://facebook.com/" target="_blank"><i class="ri-facebook-fill"></i></a></li>
@@ -13,13 +13,12 @@
                     <li><a href="https://github.com/" target="_blank"><i class="ri-github-fill"></i></a></li>
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><router-link to="/services" class="nav-link">Services</router-link></li>
-                    <li class="nav-item"><router-link to="/contact" class="nav-link">Support</router-link></li>
-                    <li class="nav-item"><router-link to="/privacy-policy" class="nav-link">Privacy Policy</router-link></li>
-                    <li class="nav-item"><router-link to="/faq" class="nav-link">FAQ's</router-link></li>
-                    <li class="nav-item"><router-link to="/contact" class="nav-link">Contact</router-link></li>
+                    <li class="nav-item"><router-link to="/" class="nav-link">Beranda</router-link></li>
+                    <li class="nav-item"><router-link to="/about" class="nav-link">Tentang</router-link></li>
+                    <li class="nav-item"><router-link to="/gallery" class="nav-link">Galeri</router-link></li>
+                    <li class="nav-item"><router-link to="/contact" class="nav-link">Kontak</router-link></li>
                 </ul>
-                <p class="copyright">Copyright @{{currentYear}} <strong>Jexa</strong>. All Rights Reserved by <a href="https://envytheme.com/" target="_blank">EnvyTheme</a></p>
+                <p class="copyright">Copyright @{{currentYear}} <strong>BKPM</strong>.</p>
             </div>
         </div>
     </div>

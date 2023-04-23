@@ -4035,6 +4035,7 @@ New Demo CSS
     position: relative;
     z-index: 1;
     padding-top: 370px;
+    margin-top: 20vh;
 
     .single-footer-widget {
         margin-bottom: 25px;
@@ -4101,6 +4102,9 @@ New Demo CSS
 
     .single-footer-widget {
         margin-bottom: 25px;
+        .logo {
+            max-width: 160px;
+        }
 
         p {
             color: var(--whiteColor);

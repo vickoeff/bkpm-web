@@ -83,6 +83,9 @@
     .logo {
         display: inline-block;
         margin-bottom: 30px;
+        img {
+            max-width: 240px;
+        }
     }
     .social-links {
         padding-left: 0;

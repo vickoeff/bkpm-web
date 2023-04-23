@@ -3,14 +3,7 @@
         <Navbar class="jexa-new-navbar-area" />
         <MainBanner />
         <AppScreens />
-        <GettingBestApp />
-        <Video />
-        <Pricing />
-        <AppDownload />
-        <SoftwareIntegrations />
-        <CustomerReviews />
-        <FreeTrial />
-        <FooterStyleThree />
+        <Footer />
     </div>
 </template>
 
@@ -18,14 +11,7 @@
 import Navbar from '../Layout/Navbar'
 import MainBanner from '../HomeSeven/MainBanner'
 import AppScreens from '../HomeSeven/AppScreens'
-import GettingBestApp from '../HomeSeven/GettingBestApp'
-import Video from '../HomeSeven/Video'
-import Pricing from '../HomeSeven/Pricing'
-import AppDownload from '../HomeSeven/AppDownload'
-import SoftwareIntegrations from '../HomeSeven/SoftwareIntegrations'
-import CustomerReviews from '../HomeSeven/CustomerReviews'
-import FreeTrial from '../HomeSeven/FreeTrial'
-import FooterStyleThree from '../Layout/FooterStyleThree'
+import Footer from '../Layout/Footer'
 
 export default {
     name: 'HomePageSeven',
@@ -33,14 +19,7 @@ export default {
         Navbar,
         MainBanner,
         AppScreens,
-        GettingBestApp,
-        Video,
-        Pricing,
-        AppDownload,
-        SoftwareIntegrations,
-        CustomerReviews,
-        FreeTrial,
-        FooterStyleThree,
+        Footer,
     }
 }
 </script>

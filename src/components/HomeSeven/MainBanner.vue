@@ -22,7 +22,7 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="new-app-main-banner-image" data-aos="fade-up" data-aos-duration="2000">
                         <div class="banner-slider">
-                            <carousel :items-to-show="1" :autoplay="2400" :transition="700" :wrapAround="true">
+                            <carousel  :items-to-show="1" :autoplay="2400" :transition="700" :wrapAround="true">
                                 <slide v-for="slide, idx in slider" :key="idx">
                                     <img class="slide-image" :src="slide.url_file" alt="">
                                 </slide>
@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import { Carousel, Slide} from 'vue3-carousel'
+import { Carousel, Slide } from 'vue3-carousel'
 import getSlider from '../../../api/getSlider'
 
 export default {
@@ -66,12 +66,15 @@ export default {
             slider: [],
         }
     },
-    mounted: async function() {
-        const res = await getSlider();
-        this.slider = res.data;
+    beforeMount() {
+        this.getDataSlide();
     },
-    // methods: {
-
-    // }
+    methods: {
+        async getDataSlide() {
+            const res = await getSlider();
+            this.slider = res.data;
+            console.log("res data:", res);
+        }
+    }
 }
 </script>
