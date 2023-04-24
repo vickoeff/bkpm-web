@@ -6,7 +6,6 @@ import "aos/dist/aos.css";
 import InitAxios from '../api';
 
 import "./assets/custom.scss";
-import 'vue3-carousel/dist/carousel.css'
 
 InitAxios();
 const app = createApp(App).use(router);

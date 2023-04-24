@@ -599,7 +599,6 @@
   }
   .navbar-area .jexa-nav .navbar .navbar-collapse .navbar-nav .nav-item.megamenu .dropdown-menu .nav-item .row .col {
     flex-basis: unset;
-    -webkit-box-flex: unset;
     flex-grow: unset;
     max-width: 100%;
     margin-left: auto;
@@ -642,6 +641,4 @@
     padding-left: 100px;
     padding-right: 100px;
   }
-}
-
-/*# sourceMappingURL=navbar.css.map */
+}/*# sourceMappingURL=navbar.css.map */

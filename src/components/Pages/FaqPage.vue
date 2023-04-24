@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Navbar />
+        <Navbar class="jexa-new-navbar-area" />
         <PageTitle pageTitle="FAQ" />
         <Faq />
         <ContactInfo />

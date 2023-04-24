@@ -15,24 +15,9 @@ This files table contents are outlined below>>>>>
 @import url(../css/pages-css/navbar.css);
 @import url(../css/pages-css/home-one.css);
 @import url(../css/pages-css/home-two.css);
-@import url(../css/pages-css/home-three.css);
-@import url(../css/pages-css/home-four.css);
 @import url(../css/pages-css/home-five.css);
-@import url(../css/pages-css/home-six.css);
-@import url(../css/pages-css/team.css);
-@import url(../css/pages-css/privacy-policy.css);
-@import url(../css/pages-css/terms-conditions.css);
 @import url(../css/pages-css/gallery.css);
-@import url(../css/pages-css/how-it-works.css);
-@import url(../css/pages-css/profile-authentication.css);
-@import url(../css/pages-css/coming-soon.css);
-@import url(../css/pages-css/error.css);
 @import url(../css/pages-css/faq.css);
-@import url(../css/pages-css/products.css);
-@import url(../css/pages-css/products-details.css);
-@import url(../css/pages-css/cart.css);
-@import url(../css/pages-css/checkout.css);
-@import url(../css/pages-css/blog-details.css);
 @import url(../css/pages-css/contact.css);
 @import url(../css/pages-css/footer.css);
 /*================================================
@@ -219,9 +204,17 @@ p:last-child {
   border-radius: 0;
   height: 50px;
 }
+.form-control::-moz-placeholder {
+  color: var(--paragraphColor);
+  -moz-transition: var(--transition);
+  transition: var(--transition);
+}
 .form-control::placeholder {
   color: var(--paragraphColor);
   transition: var(--transition);
+}
+.form-control:focus::-moz-placeholder {
+  color: transparent;
 }
 .form-control:focus::placeholder {
   color: transparent;
@@ -671,12 +664,10 @@ textarea.form-control {
 @keyframes fadeInDown {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
   to {
     opacity: 1;
-    -webkit-transform: translateZ(0);
     transform: translateZ(0);
   }
 }
@@ -745,6 +736,67 @@ New Demo CSS
   box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
   animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
 }
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item a {
+  color: var(--blackColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item a:hover, .jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item a.active {
+  color: var(--mainColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item:hover a, .jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item.active a {
+  color: var(--mainColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li a {
+  color: var(--blackColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:hover {
+  color: var(--mainColor);
+  padding-left: 25px;
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li a.active {
+  color: var(--mainColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a {
+  color: var(--blackColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:hover {
+  color: var(--mainColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a.active {
+  color: var(--mainColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a {
+  color: var(--blackColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover {
+  color: var(--mainColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active {
+  color: var(--mainColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a {
+  color: var(--blackColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover {
+  color: var(--mainColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active {
+  color: var(--mainColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li.active a {
+  color: var(--mainColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li.active a {
+  color: var(--mainColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li.active a {
+  color: var(--mainColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item.megamenu .dropdown-menu .megamenu-submenu li a {
+  color: var(--blackColor);
+}
+.jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item.megamenu .dropdown-menu .megamenu-submenu li a:hover, .jexa-new-navbar-area.is-sticky .jexa-nav .navbar .navbar-nav .nav-item.megamenu .dropdown-menu .megamenu-submenu li a.active {
+  color: var(--mainColor);
+}
 .jexa-new-navbar-area .jexa-nav .navbar .navbar-brand img:first-child {
   display: none;
 }
@@ -752,7 +804,7 @@ New Demo CSS
   display: block;
 }
 .jexa-new-navbar-area .jexa-nav .navbar .navbar-nav .nav-item a {
-  color: var(--blackColor);
+  color: var(--whiteColor);
 }
 .jexa-new-navbar-area .jexa-nav .navbar .navbar-nav .nav-item a:hover, .jexa-new-navbar-area .jexa-nav .navbar .navbar-nav .nav-item a.active {
   color: var(--mainColor);
@@ -761,7 +813,7 @@ New Demo CSS
   color: var(--mainColor);
 }
 .jexa-new-navbar-area .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li a {
-  color: var(--blackColor);
+  color: var(--whiteColor);
 }
 .jexa-new-navbar-area .jexa-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:hover {
   color: var(--mainColor);
@@ -1115,6 +1167,8 @@ New Demo CSS
 }
 
 .new-app-main-banner-wrap-area {
+  display: grid;
+  min-height: 100vh;
   background-color: #F6F9FB;
   position: relative;
   z-index: 1;
@@ -1126,6 +1180,7 @@ New Demo CSS
   max-width: 635px;
   margin-left: auto;
   margin-top: -90px;
+  padding: 16px;
 }
 .new-app-main-banner-wrap-content .sub-title {
   font-size: 14px;
@@ -1137,13 +1192,13 @@ New Demo CSS
   font-weight: 500;
 }
 .new-app-main-banner-wrap-content h1 {
-  color: var(--blackColor);
+  color: var(--whiteColor);
   font-size: 62px;
   line-height: 1.4;
   margin-bottom: 10px;
 }
 .new-app-main-banner-wrap-content p {
-  color: var(--blackColor);
+  color: var(--whiteColor);
   margin-bottom: 0;
 }
 .new-app-main-banner-wrap-content .user-info {
@@ -1284,9 +1339,19 @@ New Demo CSS
 }
 
 .new-app-main-banner-wrap-image {
-  text-align: center;
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: -1;
+}
+.new-app-main-banner-wrap-image .overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(38, 42, 55, 0.5607843137);
+  z-index: 2;
 }
 .new-app-main-banner-wrap-image .wrap-image-shape-1 {
   position: absolute;
@@ -3450,9 +3515,17 @@ New Demo CSS
   border-radius: 50px;
   border: none;
 }
+.new-free-trial-content form .input-newsletter::-moz-placeholder {
+  color: var(--paragraphColor);
+  -moz-transition: var(--transition);
+  transition: var(--transition);
+}
 .new-free-trial-content form .input-newsletter::placeholder {
   color: var(--paragraphColor);
   transition: var(--transition);
+}
+.new-free-trial-content form .input-newsletter:focus::-moz-placeholder {
+  color: transparent;
 }
 .new-free-trial-content form .input-newsletter:focus::placeholder {
   color: transparent;
@@ -5216,6 +5289,4 @@ Preloader CSS
   .new-app-banner-strock-shape {
     right: 400px;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
