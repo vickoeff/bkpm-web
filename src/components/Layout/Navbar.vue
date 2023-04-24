@@ -38,6 +38,10 @@
                             </li>
                         </ul>
                     </div>
+                    
+                    <div class="others-option">
+                        <router-link to="/contact" class="default-btn">Login</router-link>
+                    </div>
                 </nav>
             </div>
         </div>

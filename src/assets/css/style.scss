@@ -16,25 +16,8 @@ This files table contents are outlined below>>>>>
 // Every Pages Imported CSS
 @import url(../css/pages-css/navbar.css);
 @import url(../css/pages-css/home-one.css);
-@import url(../css/pages-css/home-two.css);
-@import url(../css/pages-css/home-three.css);
-@import url(../css/pages-css/home-four.css);
-@import url(../css/pages-css/home-five.css);
-@import url(../css/pages-css/home-six.css);
-@import url(../css/pages-css/team.css);
-@import url(../css/pages-css/privacy-policy.css);
-@import url(../css/pages-css/terms-conditions.css);
 @import url(../css/pages-css/gallery.css);
-@import url(../css/pages-css/how-it-works.css);
-@import url(../css/pages-css/profile-authentication.css);
-@import url(../css/pages-css/coming-soon.css);
-@import url(../css/pages-css/error.css);
 @import url(../css/pages-css/faq.css);
-@import url(../css/pages-css/products.css);
-@import url(../css/pages-css/products-details.css);
-@import url(../css/pages-css/cart.css);
-@import url(../css/pages-css/checkout.css);
-@import url(../css/pages-css/blog-details.css);
 @import url(../css/pages-css/contact.css);
 @import url(../css/pages-css/footer.css);
 
@@ -777,6 +760,112 @@ New Demo CSS
         background-color: var(--whiteColor) !important;
         box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
         animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+        
+        .jexa-nav .navbar {
+            .navbar-nav {
+                .nav-item {
+                a {
+                    color: var(--blackColor);
+                    
+                    &:hover, &.active {
+                        color: var(--mainColor);
+                    }
+                }
+                &:hover, &.active {
+                    a {
+                        color: var(--mainColor);
+                    }
+                }
+                .dropdown-menu {
+                    li {
+                        a {
+                            color: var(--blackColor);
+                            
+                            &:hover {
+                                color: var(--mainColor);
+                                padding-left: 25px;
+                            }
+                            &.active {
+                                color: var(--mainColor);
+                            }
+                        }
+                        .dropdown-menu {
+                            li {
+                                a {
+                                    color: var(--blackColor);
+                                    
+                                    &:hover {
+                                        color: var(--mainColor);
+                                    }
+                                    &.active {
+                                        color: var(--mainColor);
+                                    }
+                                }
+                                .dropdown-menu {
+                                    li {
+                                        a {
+                                            color: var(--blackColor);
+                                            
+                                            &:hover {
+                                                color: var(--mainColor);
+                                            }
+                                            &.active {
+                                                color: var(--mainColor);
+                                            }
+                                        }
+                                        .dropdown-menu {
+                                            li {
+                                                a {
+                                                    color: var(--blackColor);
+                                                    
+                                                    &:hover {
+                                                        color: var(--mainColor);
+                                                    }
+                                                    &.active {
+                                                        color: var(--mainColor);
+                                                    }
+                                                }
+                                                &.active {
+                                                    a {
+                                                        color: var(--mainColor);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                &.active {
+                                    a {
+                                        color: var(--mainColor);
+                                    }
+                                }
+                            }
+                        }
+                        &.active {
+                            a {
+                                color: var(--mainColor);
+                            }
+                        }
+                    }
+                }
+                &.megamenu {
+                    .dropdown-menu {
+                        .megamenu-submenu {
+                            li {
+                                a {
+                                    color: var(--blackColor);
+                                    
+                                    &:hover, &.active {
+                                        color: var(--mainColor);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     }
     .jexa-nav {
         .navbar {
@@ -793,7 +882,7 @@ New Demo CSS
             .navbar-nav {
                 .nav-item {
                     a {
-                        color: var(--blackColor);
+                        color: var(--whiteColor);
                         
                         &:hover, &.active {
                             color: var(--mainColor);
@@ -807,7 +896,7 @@ New Demo CSS
                     .dropdown-menu {
                         li {
                             a {
-                                color: var(--blackColor);
+                                color: var(--whiteColor);
 
                                 &:hover {
                                     color: var(--mainColor);
@@ -1269,6 +1358,8 @@ New Demo CSS
 
 // New App Main Banner Wrap Area CSS
 .new-app-main-banner-wrap-area {
+    display: grid;
+    min-height: 100vh;
     background-color: #F6F9FB;
     position: relative;
     z-index: 1;
@@ -1281,6 +1372,7 @@ New Demo CSS
     max-width: 635px;
     margin-left: auto;
     margin-top: -90px;
+    padding: 16px;
 
     .sub-title {
         font-size: 14px;
@@ -1292,13 +1384,13 @@ New Demo CSS
         font-weight: 500;
     }
     h1 {
-        color: var(--blackColor);
+        color: var(--whiteColor);
         font-size: 62px;
         line-height: 1.4;
         margin-bottom: 10px;
     }
     p {
-        color: var(--blackColor);
+        color: var(--whiteColor);
         margin-bottom: 0;
     }
     .user-info {
@@ -1456,9 +1548,20 @@ New Demo CSS
     }
 }
 .new-app-main-banner-wrap-image {
-    text-align: center;
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
+
+    .overlay {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: #262a378f;
+        z-index: 2;
+    }
 
     .wrap-image-shape-1 {
         position: absolute;

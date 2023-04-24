@@ -1,23 +1,27 @@
 <template>
     <div>
-        <Navbar />
+        <Navbar class="jexa-new-navbar-area" />
         <PageTitle pageTitle="Tentang" />
         <About
+            v-if="aboutData"
             title="Kegiatan Penilaian Kinerja PTSP dan PPB Pemda Serta Kinerja PPB K/L"
             :text="aboutData.definisi_kegiatan"
             :image="gallery[7].url_file"
         />
         <ChallengesAndTrack
+            v-if="aboutData"
             title="Tujuan BKPM"
             :text="aboutData.tujuan"
             :image="gallery[15].url_file"
         />
         <About
+            v-if="aboutData"
             title="Tentang BKPM"
             :text="aboutData.bkpm"
             :image="gallery[0].url_file"
         />
         <SoftwareIntegrations
+            v-if="aboutData"
             title="Manfaat BKPM"
             :text="aboutData.manfaat"
             :gallery="gallery"
@@ -53,7 +57,7 @@ export default {
             gallery: [],
         }
     },
-    beforeMount () {
+    mounted() {
         this.getData()
     },
     methods: {

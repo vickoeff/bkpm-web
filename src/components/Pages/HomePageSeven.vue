@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Navbar class="jexa-new-navbar-area" />
+        <Navbar class="jexa-new-navbar-area home" />
         <MainBanner />
         <AppScreens />
         <Footer />

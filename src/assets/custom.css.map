@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,OAAO,CAAP,0JAAO;AACP,OAAO,CAAP,sJAAO;AACP,OAAO,CAAP,kJAAO",
-    "sources": [
-        "custom.scss"
-    ],
-    "names": [],
-    "file": "custom.css"
-}
+{"version":3,"sources":["custom.scss"],"names":[],"mappings":"AAAQ,iCAAA;AACA,6BAAA;AACA,yBAAA","file":"custom.css"}

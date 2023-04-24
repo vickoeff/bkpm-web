@@ -111,8 +111,8 @@ Main Banner Area CSS
 }
 
 .banner-slider {
-  width: 600px;
-  height: 600px;
+  width: 100vw;
+  height: 100vh;
   border-radius: 100%;
   overflow: hidden;
   margin-left: auto;
@@ -120,9 +120,10 @@ Main Banner Area CSS
 }
 
 .slide-image {
-  width: 600px;
-  height: 600px;
-  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .banner-shape1 {
@@ -1240,9 +1241,17 @@ Free Trial Area CSS
   border-radius: 5px;
   border: none;
 }
+.free-trial-content form .input-newsletter::-moz-placeholder {
+  color: var(--paragraphColor);
+  -moz-transition: var(--transition);
+  transition: var(--transition);
+}
 .free-trial-content form .input-newsletter::placeholder {
   color: var(--paragraphColor);
   transition: var(--transition);
+}
+.free-trial-content form .input-newsletter:focus::-moz-placeholder {
+  color: transparent;
 }
 .free-trial-content form .input-newsletter:focus::placeholder {
   color: transparent;
@@ -2075,6 +2084,4 @@ Free Trial Area CSS
   .banner-shape5 {
     right: 15%;
   }
-}
-
-/*# sourceMappingURL=home-one.css.map */
+}/*# sourceMappingURL=home-one.css.map */
