@@ -2,10 +2,26 @@
     <div>
         <Navbar />
         <PageTitle pageTitle="Tentang" />
-        <About title="Kegiatan Penilaian Kinerja PTSP dan PPB Pemda Serta Kinerja PPB K/L" :text="definisiKegiatan" :image="definisiKegiatanImage"/>
-        <ChallengesAndTrack title="Tujuan BKPM" :text="tujuan" :image="tujuanImage"/>
-        <About title="Tentang BKPM" :text="bkpm" :image="bkpmImage"/>
-        <SoftwareIntegrations title="Manfaat BKPM" :text="manfaat" :gallery="gallery" />
+        <About
+            title="Kegiatan Penilaian Kinerja PTSP dan PPB Pemda Serta Kinerja PPB K/L"
+            :text="aboutData.definisi_kegiatan"
+            :image="gallery[7].url_file"
+        />
+        <ChallengesAndTrack
+            title="Tujuan BKPM"
+            :text="aboutData.tujuan"
+            :image="gallery[15].url_file"
+        />
+        <About
+            title="Tentang BKPM"
+            :text="aboutData.bkpm"
+            :image="gallery[0].url_file"
+        />
+        <SoftwareIntegrations
+            title="Manfaat BKPM"
+            :text="aboutData.manfaat"
+            :gallery="gallery"
+        />
         <Footer />
     </div>
 </template>
@@ -33,17 +49,11 @@ export default {
     },
     data() {
         return {
-            bkpm: null,
-            bkpmImage: null,
-            tujuan: null,
-            tujuanImage: null,
-            definisiKegiatan: null,
-            definisiKegiatanImage: null,
-            manfaat: null,
+            aboutData: null,
             gallery: [],
         }
     },
-    mounted () {
+    beforeMount () {
         this.getData()
     },
     methods: {
@@ -51,13 +61,7 @@ export default {
             const aboutData = await getTentang()
             const {data} = await getGallery()
 
-            this.bkpm = aboutData.bkpm
-            this.tujuan = aboutData.tujuan
-            this.definisiKegiatan = aboutData.definisi_kegiatan
-            this.manfaat = aboutData.manfaat
-            this.bkpmImage = data[0].url_file
-            this.tujuanImage = data[15].url_file
-            this.definisiKegiatanImage = data[7].url_file
+            this.aboutData = aboutData
             this.gallery = data
         }
     }
