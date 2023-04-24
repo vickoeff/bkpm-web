@@ -2,10 +2,26 @@
     <div>
         <Navbar />
         <PageTitle pageTitle="Tentang" />
-        <About />
-        <ChallengesAndTrack />
-        <Abouts />
-        <SoftwareIntegrations />
+        <About
+            title="Kegiatan Penilaian Kinerja PTSP dan PPB Pemda Serta Kinerja PPB K/L"
+            :text="aboutData.definisi_kegiatan"
+            :image="gallery[7].url_file"
+        />
+        <ChallengesAndTrack
+            title="Tujuan BKPM"
+            :text="aboutData.tujuan"
+            :image="gallery[15].url_file"
+        />
+        <About
+            title="Tentang BKPM"
+            :text="aboutData.bkpm"
+            :image="gallery[0].url_file"
+        />
+        <SoftwareIntegrations
+            title="Manfaat BKPM"
+            :text="aboutData.manfaat"
+            :gallery="gallery"
+        />
         <Footer />
     </div>
 </template>
@@ -14,10 +30,12 @@
 import Navbar from '../Layout/Navbar'
 import PageTitle from '../Common/PageTitle'
 import About from '../AboutOne/About'
-import Abouts from '../AboutOne/Abouts'
 import ChallengesAndTrack from '../AboutOne/ChallengesAndTrack'
 import SoftwareIntegrations from '../AboutOne/SoftwareIntegrations'
 import Footer from '../Layout/Footer'
+
+import getTentang from '../../../api/getTentang'
+import getGallery from '../../../api/getGallery'
 
 export default {
     name: 'AboutPageOne',
@@ -26,9 +44,26 @@ export default {
         PageTitle,
         About,
         ChallengesAndTrack,
-        Abouts,
         SoftwareIntegrations,
         Footer,
+    },
+    data() {
+        return {
+            aboutData: null,
+            gallery: [],
+        }
+    },
+    beforeMount () {
+        this.getData()
+    },
+    methods: {
+        async getData() {
+            const aboutData = await getTentang()
+            const {data} = await getGallery()
+
+            this.aboutData = aboutData
+            this.gallery = data
+        }
     }
 }
 </script>

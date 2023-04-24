@@ -4,9 +4,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="software-integrations-content white-color">
-                        <span class="sub-title">MANFAAT</span>
-                        <h2>Manfaat BKPM</h2>
-                        <div v-html="manfaat"></div>
+                        <h2>{{ title }}</h2>
+                        <div v-html="text"></div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
@@ -28,25 +27,20 @@
 </template>
 
 <script>
-import getTentang from '../../../api/getTentang'
-import getGallery from '../../../api/getGallery'
 export default {
     name: 'SoftwareIntegrations',
-    data () {
-        return {
-            manfaat: null,
-            gallery: null
-        }
-    },
-    mounted () {
-        this.getData()
-    },
-    methods: {
-        async getData() {
-            const data = await getTentang()
-            const galery = await getGallery()
-            this.manfaat = data.manfaat
-            this.gallery = galery.data
+    props: {
+        title: {
+            type: String,
+            data: ''
+        },
+        text: {
+            type: String,
+            data: ''
+        },
+        gallery: {
+            type: Array,
+            data: []
         }
     }
 }
