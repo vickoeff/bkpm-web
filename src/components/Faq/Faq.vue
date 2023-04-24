@@ -7,10 +7,10 @@
                         <h2>FAQ Kategori</h2>
                         <ul>
                             <li>
-                                <a href="#faq" :class="keyType === ''? 'active': ''" @click="keyType=''"><span>Semua</span></a>
+                                <a :class="keyType === ''? 'active': ''" @click="categoryOnClick('', $event)"><span>Semua</span></a>
                             </li>
                             <li v-for="item in type" :key="item.id">
-                                <a href="#faq" :class="keyType === item? 'active': ''" @click="keyType=item"><span>{{item.charAt(0).toUpperCase() + item.slice(1)}}</span></a>
+                                <a :class="keyType === item? 'active': ''" @click="categoryOnClick(item, $event)"><span>{{item.charAt(0).toUpperCase() + item.slice(1)}}</span></a>
                             </li>
                         </ul>
                     </div>
@@ -78,6 +78,11 @@ export default {
                }
            }
            this.type = type
+        },
+        categoryOnClick(key, e) {
+            e.preventDefault();
+            if(key == '') return this.keyType = ''
+            this.keyType = key
         }
     }
 }
