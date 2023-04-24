@@ -4,8 +4,8 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <router-link class="navbar-brand" to="/">
-                        <img src="../../assets/images/Logo_Kementerian_Investasi_BKPM_Warna_Square.png" alt="logo">
-                        <img src="../../assets/images/Logo_Kementerian_Investasi_BKPM_Warna_Square.png" alt="logo">
+                        <img src="../../assets/bkpm/Logo_Kementerian_Investasi_BKPM_Warna_Square.png" alt="logo">
+                        <img src="../../assets/bkpm/Logo_Kementerian_Investasi_BKPM_Warna_Square.png" alt="logo">
                     </router-link>
 
                     <div 

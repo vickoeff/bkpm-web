@@ -5,7 +5,7 @@
                 <div class="row justify-content-between">
                     <div class="col-6 col-md-3">
                         <router-link to="/" class="logo">
-                            <img src="../../assets/images/Logo_Kementerian_Investasi_BKPM_Warna_Square.png" alt="logo">
+                            <img src="../../assets/bkpm/Logo_Kementerian_Investasi_BKPM_Warna_Square.png" alt="logo">
                         </router-link>
                     </div>
                     <div class="col-6 col-md-3 text-start">
