@@ -87,7 +87,27 @@
             max-width: 240px;
         }
     }
+    .sub-tittle {
+        text-align: left;
+        font-size: 16pt;
+        color: var(--whiteColor);
+        margin-bottom: 16px;
+    }
+    .address {
+        color: var(--whiteColor);
+    }
+    .contact-person {
+        list-style: none;
+        padding-left: unset;
+        text-align: left;
+
+        li {
+            color: white;
+        }
+    }
     .social-links {
+        display: flex;
+        justify-content: start;
         padding-left: 0;
         margin-bottom: 0;
         list-style-type: none;

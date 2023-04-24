@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
-                    <div class="about-image">
+                    <div v-show="image" class="about-image">
                         <img :src=image data-aos="fade-up" alt="about">
                     </div>
                 </div>

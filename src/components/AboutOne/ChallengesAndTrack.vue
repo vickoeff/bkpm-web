@@ -4,8 +4,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="app-progress-animation-image">
-                        <img :src=image alt="app-progress" data-aos="fade-down" data-aos-duration="1000">
-                        <img :src=image class="main-image" alt="app-progress">
+                        <img v-show="image" :src=image alt="app-progress" data-aos="fade-down" data-aos-duration="1000">
+                        <img v-show="image" :src=image class="main-image" alt="app-progress">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">

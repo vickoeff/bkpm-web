@@ -59,7 +59,26 @@
 .footer-content .logo img {
   max-width: 240px;
 }
+.footer-content .sub-tittle {
+  text-align: left;
+  font-size: 16pt;
+  color: var(--whiteColor);
+  margin-bottom: 16px;
+}
+.footer-content .address {
+  color: var(--whiteColor);
+}
+.footer-content .contact-person {
+  list-style: none;
+  padding-left: unset;
+  text-align: left;
+}
+.footer-content .contact-person li {
+  color: white;
+}
 .footer-content .social-links {
+  display: flex;
+  justify-content: start;
   padding-left: 0;
   margin-bottom: 0;
   list-style-type: none;

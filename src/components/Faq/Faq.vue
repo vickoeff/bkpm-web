@@ -10,7 +10,7 @@
                                 <a :class="keyType === ''? 'active': ''" @click="categoryOnClick('', $event)"><span>Semua</span></a>
                             </li>
                             <li v-for="item in type" :key="item.id">
-                                <a :class="keyType === item? 'active': ''" @click="categoryOnClick(item, $event)"><span>{{item.charAt(0).toUpperCase() + item.slice(1)}}</span></a>
+                                <a :class="keyType === item? 'active': ''" @click="categoryOnClick(item, $event)"><span>{{normalization(item)}}</span></a>
                             </li>
                         </ul>
                     </div>
@@ -78,6 +78,12 @@ export default {
                }
            }
            this.type = type
+        },
+        normalization(text) {
+            const replaceSymbol = text.split("_");
+            const toUpperCase = replaceSymbol.map(text => text.charAt(0).toUpperCase() + text.slice(1));
+
+            return toUpperCase.join(" ");
         },
         categoryOnClick(key, e) {
             e.preventDefault();
