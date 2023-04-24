@@ -1,18 +1,24 @@
 <template>
-    <div class="faq-area ptb-100">
+    <div class="faq-area ptb-100" id="faq">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-12">
                     <div class="faq-sidebar">
+                        <h2>FAQ Kategori</h2>
                         <ul>
-                            <li v-for="item in tipe" :key="item.id"><a href="faq"><span>{{item}}</span></a></li>
+                            <li>
+                                <a :class="keyType === ''? 'active': ''" @click="categoryOnClick('', $event)"><span>Semua</span></a>
+                            </li>
+                            <li v-for="item in type" :key="item.id">
+                                <a :class="keyType === item? 'active': ''" @click="categoryOnClick(item, $event)"><span>{{item.charAt(0).toUpperCase() + item.slice(1)}}</span></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-12">
                     <div class="faq-accordion">
                         <accordion>
-                            <accordion-item v-for="item in items" :key="item.id">
+                            <accordion-item v-for="item in filteredFaq" :key="item.id">
                                 <template v-slot:accordion-trigger>
                                 <button class="accordion-title" v-html="item.pertanyaan">
                                 </button>
@@ -43,27 +49,40 @@ export default {
     data() {
         return {
             items: null,
-            tipe: null
+            type: null,
+            keyType: '',
         }
     },
-    mounted: function () {
+    computed: {
+        filteredFaq() {
+            if(!this.keyType || this.keyType == '') {
+                return this.items;
+            }
+            return this.items.filter((item) => item.tipe == this.keyType);
+        },  
+    },
+    beforeMount: function () {
         this.getData()
-        this.getTipe()
     },
     methods:{
         async getData() {
            const faq = await getFaq()
            this.items = faq.data
+           this.getType()
         },
-        async getTipe() {
-           const faq = await getFaq()
-           let tipe = []
-           for(let i = 0; i < faq.data.length; i++) {
-               if(!tipe.includes(faq.data[i].tipe)) {
-                   tipe.push(faq.data[i].tipe)
+        async getType() {
+           let type = []
+           for(let i = 0; i < this.items.length; i++) {
+               if(!type.includes(this.items[i].tipe)) {
+                   type.push(this.items[i].tipe)
                }
            }
-           this.tipe = tipe
+           this.type = type
+        },
+        categoryOnClick(key, e) {
+            e.preventDefault();
+            if(key == '') return this.keyType = ''
+            this.keyType = key
         }
     }
 }
