@@ -1,9 +1,14 @@
 <template>
     <div class="body-agenda">
     <ul class="ul-agenda">
+      <li>
+    </li>
+    <li>
+    </li>
     <li v-for="item in items" :key="item.id" style="--accent-color:#41516C">
-        <div class="date">{{item.tanggal_mulai}}-{{item.tanggal_selesai}}</div>
+        <div class="date">{{item.tanggal_mulai}}  s/d  {{item.tanggal_selesai}}</div>
         <div class="title">{{item.agenda}}</div>
+        <div class="descr"></div>
     </li>
 </ul>
 </div>
@@ -34,7 +39,7 @@
 
 .body-agenda {
   --color: rgba(30, 30, 30);
-  --bgColor: rgba(245, 245, 245);
+  --bgColor: rgba(255, 255, 255);
   min-height: 100vh;
   display: grid;
   align-content: center;
