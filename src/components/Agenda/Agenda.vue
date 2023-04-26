@@ -1,6 +1,6 @@
 <template>
-    <div>
-    <ul>
+    <div class="body-agenda">
+    <ul class="ul-agenda">
     <li v-for="item in items" :key="item.id" style="--accent-color:#41516C">
         <div class="date">{{item.tanggal_mulai}}-{{item.tanggal_selesai}}</div>
         <div class="title">{{item.agenda}}</div>
@@ -29,10 +29,10 @@
 </script>
 
 
-<style>
+<style scoped>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
 
-body {
+.body-agenda {
   --color: rgba(30, 30, 30);
   --bgColor: rgba(245, 245, 245);
   min-height: 100vh;
@@ -48,11 +48,11 @@ body {
   box-sizing: border-box;
 }
 
-h1 {
+.h1-agenda {
   text-align: center;
 }
 
-ul {
+.ul-agenda {
   --col-gap: 2rem;
   --row-gap: 2rem;
   --line-w: 0.25rem;
@@ -66,7 +66,7 @@ ul {
 }
 
 /* line */
-ul::before {
+.ul-agenda::before {
   content: "";
   grid-column: 1;
   grid-row: 1 / span 20;
@@ -77,12 +77,12 @@ ul::before {
 /* columns*/
 
 /* row gaps */
-ul li:not(:last-child) {
+.ul-agenda li:not(:last-child) {
   margin-bottom: var(--row-gap);
 }
 
 /* card */
-ul li {
+.ul-agenda li {
   grid-column: 2;
   --inlineP: 1.5rem;
   margin-inline: var(--inlineP);
@@ -92,7 +92,7 @@ ul li {
 }
 
 /* date */
-ul li .date {
+.ul-agenda li .date {
   --dateH: 3rem;
   height: var(--dateH);
   margin-inline: calc(var(--inlineP) * -1);
@@ -112,7 +112,7 @@ ul li .date {
 }
 
 /* date flap */
-ul li .date::before {
+.ul-agenda li .date::before {
   content: "";
   width: var(--inlineP);
   aspect-ratio: 1;
@@ -126,7 +126,7 @@ ul li .date::before {
 }
 
 /* circle */
-ul li .date::after {
+.ul-agenda li .date::after {
   content: "";
   position: absolute;
   width: 2rem;
@@ -141,26 +141,26 @@ ul li .date::after {
 }
 
 /* title descr */
-ul li .title,
-ul li .descr {
+.ul-agenda li .title,
+.ul-agenda li .descr {
   background: var(--bgColor);
   position: relative;
   padding-inline: 1.5rem;
 }
-ul li .title {
+.ul-agenda li .title {
   overflow: hidden;
   padding-block-start: 1.5rem;
   padding-block-end: 1rem;
   font-weight: 500;
 }
-ul li .descr {
+.ul-agenda li .descr {
   padding-block-end: 1.5rem;
   font-weight: 300;
 }
 
 /* shadows */
-ul li .title::before,
-ul li .descr::before {
+.ul-agenda li .title::before,
+.ul-agenda li .descr::before {
   content: "";
   position: absolute;
   width: 90%;
@@ -171,54 +171,46 @@ ul li .descr::before {
   filter: blur(4px);
   transform: translate(-50%, 50%);
 }
-ul li .title::before {
+.ul-agenda li .title::before {
   bottom: calc(100% + 0.125rem);
 }
 
-ul li .descr::before {
+.ul-agenda li .descr::before {
   z-index: -1;
   bottom: 0.25rem;
 }
 
 @media (min-width: 40rem) {
-  ul {
+  .ul-agenda {
     grid-template-columns: 1fr var(--line-w) 1fr;
   }
-  ul::before {
+  .ul-agenda::before {
     grid-column: 2;
   }
-  ul li:nth-child(odd) {
+  .ul-agenda li:nth-child(odd) {
     grid-column: 1;
   }
-  ul li:nth-child(even) {
+  .ul-agenda li:nth-child(even) {
     grid-column: 3;
   }
 
   /* start second card */
-  ul li:nth-child(2) {
+  .ul-agenda li:nth-child(2) {
     grid-row: 2/4;
   }
 
-  ul li:nth-child(odd) .date::before {
+  .ul-agenda li:nth-child(odd) .date::before {
     clip-path: polygon(0 0, 100% 0, 100% 100%);
     left: 0;
   }
 
-  ul li:nth-child(odd) .date::after {
+  .ul-agenda li:nth-child(odd) .date::after {
     transform: translate(-50%, -50%);
     left: calc(100% + var(--col-gap) + var(--line-w) / 2);
   }
-  ul li:nth-child(odd) .date {
+  .ul-agenda li:nth-child(odd) .date {
     border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
   }
-}
-
-.credits {
-  margin-top: 1rem;
-  text-align: right;
-}
-.credits a {
-  color: var(--color);
 }
 
 </style>
