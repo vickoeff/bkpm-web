@@ -17,10 +17,10 @@
             </div>
         </div>
 
-        <div class="new-app-main-banner-wrap-image" data-aos="fade-left" data-aos-duration="2000">
+        <div v-if="!!slider.length" class="new-app-main-banner-wrap-image" data-aos="fade-left" data-aos-duration="2000">
             <div class="overlay"></div>
-            <carousel  :items-to-show="1" :autoplay="2400" :transition="700" :wrapAround="true">
-                <slide v-for="slide, idx in slider" :key="idx">
+            <carousel :items-to-show="1" :autoplay="2400" :transition="700" :wrapAround="true">
+                <slide v-for="slide in slider" :key="slide.id">
                     <img class="slide-image" :src="slide.url_file" alt="">
                 </slide>
             </carousel>
@@ -59,3 +59,4 @@ export default {
     }
 }
 </script>
+ 
