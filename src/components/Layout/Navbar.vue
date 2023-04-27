@@ -34,10 +34,10 @@
                                 <router-link to="/agenda" class="nav-link">Agenda</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link to="/faq" class="nav-link">FAQ</router-link>
+                                <router-link to="/panduan" class="nav-link">Panduan</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link to="/contact" class="nav-link">Kontak</router-link>
+                                <router-link to="/faq" class="nav-link">FAQ</router-link>
                             </li>
                         </ul>
                     </div>
