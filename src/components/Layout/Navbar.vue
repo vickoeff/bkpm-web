@@ -34,6 +34,9 @@
                                 <router-link to="/agenda" class="nav-link">Agenda</router-link>
                             </li>
                             <li class="nav-item">
+                                <router-link to="/panduan" class="nav-link">Panduan</router-link>
+                            </li>
+                            <li class="nav-item">
                                 <router-link to="/faq" class="nav-link">FAQ</router-link>
                             </li>
                             <li class="nav-item">
