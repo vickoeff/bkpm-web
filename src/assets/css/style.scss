@@ -30,7 +30,8 @@ Default CSS
 :root {
     --fontSize: 14px;
     --transition: .5s;
-    --mainColor: #ED2775;
+    --mainColor: #2D3B96;
+    --secondaryColor: #ED2775;
     --whiteColor: #ffffff;
     --blackColor: #262A37;
     --gradientColor: linear-gradient(44.44deg, #ED2775 7.79%, #FF7448 94.18%);
@@ -770,12 +771,12 @@ New Demo CSS
                     color: var(--blackColor);
                     
                     &:hover, &.active {
-                        color: var(--mainColor);
+                        color: var(--secondaryColor);
                     }
                 }
                 &:hover, &.active {
                     a {
-                        color: var(--mainColor);
+                        color: var(--secondaryColor);
                     }
                 }
                 .dropdown-menu {
@@ -784,11 +785,11 @@ New Demo CSS
                             color: var(--blackColor);
                             
                             &:hover {
-                                color: var(--mainColor);
+                                color: var(--secondaryColor);
                                 padding-left: 25px;
                             }
                             &.active {
-                                color: var(--mainColor);
+                                color: var(--secondaryColor);
                             }
                         }
                         .dropdown-menu {
@@ -797,10 +798,10 @@ New Demo CSS
                                     color: var(--blackColor);
                                     
                                     &:hover {
-                                        color: var(--mainColor);
+                                        color: var(--secondaryColor);
                                     }
                                     &.active {
-                                        color: var(--mainColor);
+                                        color: var(--secondaryColor);
                                     }
                                 }
                                 .dropdown-menu {
@@ -809,10 +810,10 @@ New Demo CSS
                                             color: var(--blackColor);
                                             
                                             &:hover {
-                                                color: var(--mainColor);
+                                                color: var(--secondaryColor);
                                             }
                                             &.active {
-                                                color: var(--mainColor);
+                                                color: var(--secondaryColor);
                                             }
                                         }
                                         .dropdown-menu {
@@ -821,15 +822,15 @@ New Demo CSS
                                                     color: var(--blackColor);
                                                     
                                                     &:hover {
-                                                        color: var(--mainColor);
+                                                        color: var(--secondaryColor);
                                                     }
                                                     &.active {
-                                                        color: var(--mainColor);
+                                                        color: var(--secondaryColor);
                                                     }
                                                 }
                                                 &.active {
                                                     a {
-                                                        color: var(--mainColor);
+                                                        color: var(--secondaryColor);
                                                     }
                                                 }
                                             }
@@ -838,14 +839,14 @@ New Demo CSS
                                 }
                                 &.active {
                                     a {
-                                        color: var(--mainColor);
+                                        color: var(--secondaryColor);
                                     }
                                 }
                             }
                         }
                         &.active {
                             a {
-                                color: var(--mainColor);
+                                color: var(--secondaryColor);
                             }
                         }
                     }
@@ -858,7 +859,7 @@ New Demo CSS
                                     color: var(--blackColor);
                                     
                                     &:hover, &.active {
-                                        color: var(--mainColor);
+                                        color: var(--secondaryColor);
                                     }
                                 }
                             }
@@ -887,12 +888,12 @@ New Demo CSS
                         color: var(--whiteColor);
                         
                         &:hover, &.active {
-                            color: var(--mainColor);
+                            color: var(--secondaryColor);
                         }
                     }
                     &:hover, &.active {
                         a {
-                            color: var(--mainColor);
+                            color: var(--secondaryColor);
                         }
                     }
                     .dropdown-menu {
@@ -901,11 +902,11 @@ New Demo CSS
                                 color: var(--whiteColor);
 
                                 &:hover {
-                                    color: var(--mainColor);
+                                    color: var(--secondaryColor);
                                     padding-left: 25px;
                                 }
                                 &.active {
-                                    color: var(--mainColor);
+                                    color: var(--secondaryColor);
                                 }
                             }
                             .dropdown-menu {
@@ -914,10 +915,10 @@ New Demo CSS
                                         color: var(--blackColor);
                                         
                                         &:hover {
-                                            color: var(--mainColor);
+                                            color: var(--secondaryColor);
                                         }
                                         &.active {
-                                            color: var(--mainColor);
+                                            color: var(--secondaryColor);
                                         }
                                     }
                                     .dropdown-menu {
@@ -926,10 +927,10 @@ New Demo CSS
                                                 color: var(--blackColor);
             
                                                 &:hover {
-                                                    color: var(--mainColor);
+                                                    color: var(--secondaryColor);
                                                 }
                                                 &.active {
-                                                    color: var(--mainColor);
+                                                    color: var(--secondaryColor);
                                                 }
                                             }
                                             .dropdown-menu {
@@ -938,15 +939,15 @@ New Demo CSS
                                                         color: var(--blackColor);
                     
                                                         &:hover {
-                                                            color: var(--mainColor);
+                                                            color: var(--secondaryColor);
                                                         }
                                                         &.active {
-                                                            color: var(--mainColor);
+                                                            color: var(--secondaryColor);
                                                         }
                                                     }
                                                     &.active {
                                                         a {
-                                                            color: var(--mainColor);
+                                                            color: var(--secondaryColor);
                                                         }
                                                     }
                                                 }
@@ -955,14 +956,14 @@ New Demo CSS
                                     }
                                     &.active {
                                         a {
-                                            color: var(--mainColor);
+                                            color: var(--secondaryColor);
                                         }
                                     }
                                 }
                             }
                             &.active {
                                 a {
-                                    color: var(--mainColor);
+                                    color: var(--secondaryColor);
                                 }
                             }
                         }
@@ -975,7 +976,7 @@ New Demo CSS
                                         color: var(--blackColor);
 
                                         &:hover, &.active {
-                                            color: var(--mainColor);
+                                            color: var(--secondaryColor);
                                         }
                                     }
                                 }
@@ -1011,12 +1012,12 @@ New Demo CSS
                         color: var(--whiteColor);
                         
                         &:hover, &.active {
-                            color: var(--mainColor);
+                            color: var(--secondaryColor);
                         }
                     }
                     &:hover, &.active {
                         a {
-                            color: var(--mainColor);
+                            color: var(--secondaryColor);
                         }
                     }
                     .dropdown-menu {
@@ -1025,11 +1026,11 @@ New Demo CSS
                                 color: var(--blackColor);
 
                                 &:hover {
-                                    color: var(--mainColor);
+                                    color: var(--secondaryColor);
                                     padding-left: 25px;
                                 }
                                 &.active {
-                                    color: var(--mainColor);
+                                    color: var(--secondaryColor);
                                 }
                             }
                             .dropdown-menu {
@@ -1038,10 +1039,10 @@ New Demo CSS
                                         color: var(--blackColor);
                                         
                                         &:hover {
-                                            color: var(--mainColor);
+                                            color: var(--secondaryColor);
                                         }
                                         &.active {
-                                            color: var(--mainColor);
+                                            color: var(--secondaryColor);
                                         }
                                     }
                                     .dropdown-menu {
@@ -1050,10 +1051,10 @@ New Demo CSS
                                                 color: var(--blackColor);
             
                                                 &:hover {
-                                                    color: var(--mainColor);
+                                                    color: var(--secondaryColor);
                                                 }
                                                 &.active {
-                                                    color: var(--mainColor);
+                                                    color: var(--secondaryColor);
                                                 }
                                             }
                                             .dropdown-menu {
@@ -1062,15 +1063,15 @@ New Demo CSS
                                                         color: var(--blackColor);
                     
                                                         &:hover {
-                                                            color: var(--mainColor);
+                                                            color: var(--secondaryColor);
                                                         }
                                                         &.active {
-                                                            color: var(--mainColor);
+                                                            color: var(--secondaryColor);
                                                         }
                                                     }
                                                     &.active {
                                                         a {
-                                                            color: var(--mainColor);
+                                                            color: var(--secondaryColor);
                                                         }
                                                     }
                                                 }
@@ -1079,14 +1080,14 @@ New Demo CSS
                                     }
                                     &.active {
                                         a {
-                                            color: var(--mainColor);
+                                            color: var(--secondaryColor);
                                         }
                                     }
                                 }
                             }
                             &.active {
                                 a {
-                                    color: var(--mainColor);
+                                    color: var(--secondaryColor);
                                 }
                             }
                         }
@@ -1099,7 +1100,7 @@ New Demo CSS
                                         color: var(--blackColor);
 
                                         &:hover, &.active {
-                                            color: var(--mainColor);
+                                            color: var(--secondaryColor);
                                         }
                                     }
                                 }
