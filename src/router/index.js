@@ -7,7 +7,6 @@ import GalleryPage from "../components/Pages/GalleryPage";
 import AgendaPage from "../components/Pages/AgendaPage";
 import PanduanPage from "../components/Pages/PanduanPage";
 import FaqPage from "../components/Pages/FaqPage";
-import ContactPage from "../components/Pages/ContactPage";
 
 const routes = [
   { path: "/", component: HomePageSeven },
@@ -16,7 +15,6 @@ const routes = [
   { path: "/agenda", component: AgendaPage},
   { path: "/panduan", component: PanduanPage},
   { path: "/faq", component: FaqPage },
-  { path: "/contact", component: ContactPage },
 ];
 
 const router = createRouter({
