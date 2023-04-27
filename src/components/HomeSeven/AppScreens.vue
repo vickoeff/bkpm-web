@@ -6,7 +6,7 @@
                 <h2>Galeri</h2>
             </div>
             <div class="app-screenshots-slides">
-                <!-- <lightgallery
+                <lightgallery
                     :settings="{ speed: 500, plugins: plugins }"
                     :onInit="onInit"
                     :onBeforeSlide="onBeforeSlide"
@@ -25,7 +25,7 @@
                             <img className="img-responsive" :src="item.url_file" />
                         </div>
                     </a>
-                </lightgallery> -->
+                </lightgallery>
                 
                 <div class="app-btn-box text-center mt-5">
                     <router-link to="/gallery" class="default-btn">Lebih Banyak</router-link>
@@ -37,47 +37,47 @@
 
 <script>
 import { defineComponent } from 'vue';
-// import Lightgallery from 'lightgallery/vue';
-// import lgZoom from 'lightgallery/plugins/zoom';
-// import getGallery from '../../../api/getGallery';
+import Lightgallery from 'lightgallery/vue';
+import lgZoom from 'lightgallery/plugins/zoom';
+import getGallery from '../../../api/getGallery';
 
-// let lightGallery= null;
+let lightGallery= null;
 
 export default defineComponent ({
     name: 'AppScreens',
-    // components: {
-    //     Lightgallery,
-    // },
-    // data: () => ({
-    //     plugins: [lgZoom],
-    //     items: null
-    // }),
-    // watch: {
-    //     items() {
-    //         this.$nextTick(() => {
-    //             lightGallery.refresh();
-    //         });
-    //     },
-    // },
-    // beforeMount () {
-    //     this.getData()
-    // },
-    // methods: {
-    //     onInit: (detail) => {
-    //         lightGallery = detail.instance;
-    //     },
-    //     onBeforeSlide: () => {
-    //         console.log('calling before slide');
-    //     },
-    //     async getData() {
-    //         const galery = await getGallery()
-    //         this.items = galery.data.slice(0, 3)
-    //     }
-    // },
+    components: {
+        Lightgallery,
+    },
+    data: () => ({
+        plugins: [lgZoom],
+        items: null
+    }),
+    watch: {
+        items() {
+            this.$nextTick(() => {
+                lightGallery.refresh();
+            });
+        },
+    },
+    beforeMount () {
+        this.getData()
+    },
+    methods: {
+        onInit: (detail) => {
+            lightGallery = detail.instance;
+        },
+        onBeforeSlide: () => {
+            console.log('calling before slide');
+        },
+        async getData() {
+            const galery = await getGallery()
+            this.items = galery.data.slice(0, 3)
+        }
+    },
 })
 </script>
 
-<!-- <style lang="css">
+<style lang="css">
 @import url('https://cdn.jsdelivr.net/npm/lightgallery@2.1.0-beta.1/css/lightgallery.css');
 @import url('https://cdn.jsdelivr.net/npm/lightgallery@2.1.0-beta.1/css/lg-zoom.css');
-</style> -->
+</style>

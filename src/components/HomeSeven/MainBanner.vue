@@ -55,7 +55,6 @@ export default {
         async getDataSlide() {
             const res = await getSlider();
             this.slider = res.data;
-            console.log("res data:", res);
         }
     }
 }

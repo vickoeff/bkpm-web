@@ -1,8 +1,7 @@
 <template>
     <div class="gallery-area pt-100 pb-75">
         <div class="container">
-            <h1 class="text-center">Under Development</h1>
-            <!-- <lightgallery
+            <lightgallery
                 :settings="{ speed: 500, plugins: plugins }"
                 :onInit="onInit"
                 :onBeforeSlide="onBeforeSlide"
@@ -21,52 +20,52 @@
                         <img className="img-responsive" :src="item.url_file" />
                     </div>
                 </a>
-            </lightgallery> -->
+            </lightgallery>
         </div>
     </div>
 </template>
 
 <script>
-// import Lightgallery from 'lightgallery/vue';
-// import lgZoom from 'lightgallery/plugins/zoom';
-// import getGallery from '../../../api/getGallery';
-// let lightGallery= null;
+import Lightgallery from 'lightgallery/vue';
+import lgZoom from 'lightgallery/plugins/zoom';
+import getGallery from '../../../api/getGallery';
+let lightGallery= null;
 
 export default {
     name: 'Gallery',
-    // components: {
-    //     Lightgallery,
-    // },
-    // watch: {
-    //     items() {
-    //         this.$nextTick(() => {
-    //             lightGallery.refresh();
-    //         });
-    //     },
-    // },
-    // data: () => ({
-    //     plugins: [lgZoom],
-    //     items: null
-    // }),
-    // mounted () {
-    //     this.getData()
-    // },
-    // methods: {
-    //     onInit: (detail) => {
-    //         lightGallery = detail.instance;
-    //     },
-    //     onBeforeSlide: () => {
-    //         console.log('calling before slide');
-    //     },
-    //     async getData() {
-    //         const galery = await getGallery()
-    //         this.items = galery.data
-    //     }
-    // },
+    components: {
+        Lightgallery,
+    },
+    watch: {
+        items() {
+            this.$nextTick(() => {
+                lightGallery.refresh();
+            });
+        },
+    },
+    data: () => ({
+        plugins: [lgZoom],
+        items: null
+    }),
+    mounted () {
+        this.getData()
+    },
+    methods: {
+        onInit: (detail) => {
+            lightGallery = detail.instance;
+        },
+        onBeforeSlide: () => {
+            console.log('calling before slide');
+        },
+        async getData() {
+            const galery = await getGallery()
+            this.items = galery.data
+        }
+    },
 }
 </script>
 
-<!-- <style lang="css">
+<style lang="css">
 @import url('https://cdn.jsdelivr.net/npm/lightgallery@2.1.0-beta.1/css/lightgallery.css');
 @import url('https://cdn.jsdelivr.net/npm/lightgallery@2.1.0-beta.1/css/lg-zoom.css');
-</style> -->
+</style>
