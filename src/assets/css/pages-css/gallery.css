@@ -29,7 +29,72 @@ Gallery Area CSS
   background-color: rgba(0, 0, 0, 0.75);
 }
 
+.card-gallery {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.card-gallery__inner {
+  position: relative;
+  min-height: 350px;
+  background-color: var(--whiteColor);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(36, 48, 88, 0.2392156863);
+}
+.card-gallery__inner p {
+  padding: 16px;
+}
+.card-gallery__inner .btn-detail {
+  position: absolute;
+  right: 16px;
+  bottom: 8px;
+  padding: 0;
+  font-size: 10pt;
+  color: #66b576;
+}
+
+.modal-gallery {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.768627451);
+  z-index: 1000;
+}
+.modal-gallery__inner {
+  position: relative;
+  max-width: 90vw;
+  min-height: 60vh;
+  background-color: var(--whiteColor);
+}
+.modal-gallery__inner p {
+  padding: 16px 56px 16px 0px;
+}
+.modal-gallery .btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+/* Max width 450px */
+@media only screen and (max-width: 450px) {
+  .modal-gallery {
+    min-height: 50vh;
+  }
+  .modal-gallery__inner p {
+    padding: 16px 56px 16px 16px;
+  }
+}
 /* Max width 767px */
+@media only screen and (max-width: 767px) {
+  .card-gallery__inner p {
+    padding: 8px;
+  }
+}
 /* Min width 576px to Max width 767px */
 /* Min width 768px to Max width 991px */
 /* Min width 992px to Max width 1199px */

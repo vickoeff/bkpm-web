@@ -26,7 +26,7 @@
             </carousel>
         </div>
 
-        <div class="new-app-main-banner-wrap-shape">
+        <div class="new-app-main-banner-wrap-shape d-none d-md-block">
             <img src="../../assets/images/more-home/banner/shape-5.png" alt="image">
         </div>
     </div>
