@@ -34,7 +34,8 @@
                     <li class="nav-item"><router-link to="/about" class="nav-link">Tentang</router-link></li>
                     <li class="nav-item"><router-link to="/gallery" class="nav-link">Galeri</router-link></li>
                     <li class="nav-item"><router-link to="/faq" class="nav-link">FAQ</router-link></li>
-                    <li class="nav-item"><router-link to="/contact" class="nav-link">Kontak</router-link></li>
+                    <li class="nav-item"><router-link to="/agenda" class="nav-link">Agenda</router-link></li>
+                    <li class="nav-item"><router-link to="/panduan" class="nav-link">Panduan</router-link></li>
                 </ul>
                 <p class="copyright">Copyright @{{currentYear}} <strong>BKPM</strong>. All Rights Reserved</p>
             </div>
