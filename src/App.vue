@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Preloader v-if="isFetching ?? true" />
+        <Preloader v-if="isFetching" />
         <router-view />
         <GoTop />
     </div>

@@ -34,7 +34,6 @@
 
 <script>
 import { Carousel, Slide } from 'vue3-carousel'
-import getSlider from '../../../api/getSlider'
 import 'vue3-carousel/dist/carousel.css'
 
 export default {
@@ -43,18 +42,10 @@ export default {
         Carousel,
         Slide,
     },
-    data() {
-        return {
-            slider: [],
-        }
-    },
-    beforeMount() {
-        this.getDataSlide();
-    },
-    methods: {
-        async getDataSlide() {
-            const res = await getSlider();
-            this.slider = res.data;
+    props: {
+        slider: {
+            type: Array,
+            data: null
         }
     }
 }
