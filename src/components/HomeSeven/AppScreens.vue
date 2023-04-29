@@ -25,26 +25,17 @@
 
 <script>
 import { defineComponent } from 'vue';
-import getGallery from '../../../api/getGallery';
 import CardGallery from '../Gallery/CardGallery.vue';
-
-let lightGallery= null;
 
 export default defineComponent ({
     name: 'AppScreens',
     components: {
         CardGallery,
     },
-    data: () => ({
-        items: null
-    }),
-    beforeMount () {
-        this.getData()
-    },
-    methods: {
-        async getData() {
-            const galery = await getGallery()
-            this.items = galery.data.slice(0, 3)
+    props: {
+        items: {
+            type: Array,
+            data: null
         }
     },
 })

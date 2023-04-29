@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Preloader v-if="isLoading" />
+        <Preloader v-if="isFetching" />
         <router-view />
         <GoTop />
     </div>
@@ -19,6 +19,11 @@
         data() {
             return {
                 isLoading: true
+            }
+        },
+        computed: {
+            isFetching() {
+                return this.$store.state.isFetching;
             }
         },
         mounted() {
