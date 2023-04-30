@@ -4,6 +4,7 @@
             <div class="row">
                 <CardGallery
                     v-for="item in items"
+                    :key="item.id"
                     :src="item.url_file"
                     :alt="item.url_file"
                     :caption="item.caption"
@@ -17,7 +18,6 @@
 <script>
 import CardGallery from "./CardGallery.vue";
 import getGallery from "../../../api/getGallery";
-
 export default {
     name: "Gallery",
     components: {
