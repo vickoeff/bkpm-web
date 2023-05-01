@@ -1,53 +1,210 @@
 <template>
     <div class="contact-area ptb-100">
         <div class="container">
-            <div class="section-title">
-                <h2>Get in Touch</h2>
-                <p>The IT industry offers a sea of options, from platforms, programming languages methodologies, technologies, tools, and more.</p>
+            <div class="map-wrapper">
+                <h2 v-if="province" class="province-title">{{province.state}}</h2>
+                <div v-if="currentProvince" class="province-info">
+                <h3 class="text-center">{{currentProvince.state}}</h3>
+                <ul>
+                    <li>cartodb_id: {{currentProvince.cartodb_id}}</li>
+                    <li>slug: {{currentProvince.slug}}</li>
+                </ul>
+                </div>
+                <svg></svg>
             </div>
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Eg: Sarah Taylor">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="form-group">
-                                <input type="email" name="email" class="form-control" id="email" placeholder="hello@sarah.com">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="form-group">
-                                <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder="Enter your phone number">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="form-group">
-                                <input type="text" name="msg_subject" class="form-control" id="msg_subject" placeholder="Enter your subject">
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div class="form-group">
-                                <textarea name="message" id="message" class="form-control" cols="30" rows="6" placeholder="Enter message..."></textarea>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <button type="submit" class="default-btn"><i class='bx bx-paper-plane'></i> Send Message</button>
-                        </div>
-                    </div>
-                </form>
+            <div class="container">
+                <p>Reference</p>
+                <ul>
+                <li><a href="https://bl.ocks.org/john-guerra/43c7656821069d00dcbc">https://bl.ocks.org/john-guerra/43c7656821069d00dcbc</a></li>
+                </ul>
             </div>
-        </div>
-        <div class="maps">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46660.669043361966!2d-76.17429939609431!3d43.03529129888566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d9f3b8019f2991%3A0x58d5929e21a62e5!2sDinosaur%20Bar-B-Que!5e0!3m2!1sen!2sbd!4v1593527523138!5m2!1sen!2sbd"></iframe>
         </div>
     </div>
 </template>
 
 <script>
+import d3 from '../../libs/d3.v3.min.js';
+
 export default {
-    name: 'Contact'
-}
+    name: 'Contact',
+    data() {
+        return {
+            province: undefined,
+            currentProvince: undefined,
+            centered: undefined,
+            mapCenter: {
+                lat: 1.4,
+                lng: 117.5
+            },
+            geoJsonUrl: 'https://raw.githubusercontent.com/superpikar/indonesia-geojson/master/indonesia.geojson',
+            mapLayer: undefined,
+        }
+    },
+    computed: {
+        size() {
+            return {
+                height: 700,
+                width: d3.select('.map-wrapper').node().getBoundingClientRect().width,  
+            }
+        },
+        color() {
+            return d3.scale.linear()
+            .domain([1, 20])
+            .clamp(true)
+            .range(['#08304b', '#08304b'])
+        },
+        projection(){
+            return d3.geo.equirectangular()
+            .scale(1400)
+            .center([this.mapCenter.lng, this.mapCenter.lat])
+            .translate([this.size.width / 2, this.size.height / 2])
+        },
+        path() {
+            return d3.geo.path()
+            .projection(this.projection);
+        },
+        svg() {
+            console.log(d3.select('svg'))
+            return d3.select('svg')
+            .attr('width', this.size.width)
+            .attr('height', this.size.height);
+        },
+    },
+    mounted() {
+        this.initMap();
+    },
+    methods: {
+        selectProvince(province) {
+            this.province = province;
+        },
+        openInfo(province) {
+            this.currentProvince = province;
+        },
+        closeInfo() {
+            this.currentProvince = undefined;
+        },
+        initMap() {
+            this.svg.append('rect')
+            .attr('class', 'background')
+            .attr('width', this.size.width)
+            .attr('height', this.size.height)
+            .on('click', this.clicked);
+
+            const g = this.svg.append('g');
+
+            const effectLayer = g.append('g')
+            .classed('effect-layer', true);
+            const mapLayer = g.append('g')
+            .classed('map-layer', true);
+            this.mapLayer = mapLayer;
+            
+            d3.json(this.geoJsonUrl, (error, mapData) => {
+                var features = mapData.features;
+
+                // Update this.color scale domain based on data
+                this.color.domain([0, d3.max(features, this.nameLength)]);
+
+                // Draw each province as a path
+                this.mapLayer.selectAll('path')
+                    .data(features)
+                    .enter().append('path') 
+                    .attr('d', this.path)
+                    .attr('vector-effect', 'non-scaling-stroke')
+                    .style('fill', this.fillFn)
+                    .on('mouseover', this.mouseover)
+                    .on('mouseout', this.mouseout)
+                    .on('click', this.clicked);
+            });
+
+        },
+        clicked(d) {
+            var x, y, k;
+
+            // Compute centroid of the selected path
+            if (d && this.centered !== d) {
+                var centroid = this.path.centroid(d);
+                x = centroid[0];
+                y = centroid[1];
+                k = 4;
+                this.centered = d;
+                this.openInfo(d.properties);
+            } else {
+                x = this.size.width / 2;
+                y = this.size.height / 2;
+                k = 1;
+                this.centered = null;
+                this.closeInfo();
+            }
+
+            // Highlight the clicked province
+            this.mapLayer.selectAll('path')
+                .style('fill', function(d){
+                return this.centered && d===this.centered ? '#D5708B' : this.fillFn(d);
+            });
+
+            // Zoom
+            g.transition()
+                .duration(750)
+                .attr('transform', 'translate(' + this.size.width / 2 + ',' + this.size.height / 2 + ')scale(' + k + ')translate(' + -x + ',' + -y + ')');
+        },
+        mouseover(d){
+            // Highlight hovered province
+            d3.select(this).style('fill', '#1483ce');
+            if(d) {
+                this.selectProvince(d.properties);
+            }
+        },
+        mouseout(d){
+            this.selectProvince(undefined);
+            // Reset province this.color
+            this.mapLayer.selectAll('path')
+                .style('fill', (d) => {
+                return this.centered && d===this.centered ? '#D5708B' : this.fillFn(d);
+                });
+        },
+        nameLength(d){
+            const n = this.nameFn(d);
+            return n ? n.length : 0;
+        },
+        nameFn(d){
+            return d && d.properties ? d.properties.name : null;
+        },
+        fillFn(d){
+            return this.color(this.nameLength(d));
+        }
+    },
+};
+
 </script>
+
+<style lang="scss" scoped>
+#app {
+  height: 100%;
+}
+
+.map-wrapper {
+  .province-title {
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    color: white;
+  }
+  .province-info {
+    background: white;
+    position: absolute;
+    top: 150px;
+    right: 20px;
+    height: 400px;
+    width: 300px;
+  }
+  .background {
+    fill: #021019;
+    pointer-events: all;
+  }
+  .map-layer {
+    fill: #08304b;
+    stroke: #021019;
+    stroke-width: 1px;
+  }
+}
+</style>

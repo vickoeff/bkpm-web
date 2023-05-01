@@ -39,6 +39,9 @@
                             <li class="nav-item">
                                 <router-link to="/faq" class="nav-link">FAQ</router-link>
                             </li>
+                            <li class="nav-item">
+                                <router-link to="/profile" class="nav-link">Profile Peserta</router-link>
+                            </li>
                         </ul>
                     </div>
                     

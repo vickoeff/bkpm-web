@@ -16,7 +16,7 @@ import ContactInfo from '../Contact/ContactInfo'
 import Footer from '../Layout/Footer'
 
 export default {
-    name: 'BlogPageOne',
+    name: 'ProfilePage',
     components: {
         Navbar,
         PageTitle,
