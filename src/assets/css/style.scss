@@ -17,7 +17,9 @@ This files table contents are outlined below>>>>>
 @import url(../css/pages-css/navbar.css);
 @import url(../css/pages-css/home-one.css);
 @import url(../css/pages-css/home-two.css);
+@import url(../css/pages-css/home-three.css);
 @import url(../css/pages-css/home-five.css);
+@import url(../css/pages-css/blog-details.css);
 @import url(../css/pages-css/gallery.css);
 @import url(../css/pages-css/faq.css);
 @import url(../css/pages-css/contact.css);
@@ -592,9 +594,6 @@ textarea.form-control {
             left: 5px;
             right: 5px;
         };
-        &.next {
-            margin-left: auto;
-        }
         &:hover {
             color: var(--mainColor);
         }
