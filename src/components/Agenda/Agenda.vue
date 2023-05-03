@@ -6,7 +6,7 @@
     <li>
     </li>
     <li v-for="item in items" :key="item.id" style="--accent-color:#41516C">
-        <div class="date">{{item.tanggal_mulai}}  s/d  {{item.tanggal_selesai}}</div>
+        <div class="date">{{formatDate(item.tanggal_mulai)}}  s/d  {{formatDate(item.tanggal_selesai)}}</div>
         <div class="title">{{item.agenda}}</div>
         <div class="descr"></div>
     </li>
@@ -15,6 +15,8 @@
 </template>
 
 <script>
+    import moment from 'moment';
+    import 'moment/locale/id'
     import getAgenda from '../../../api/getAgenda';
     export default {
         name: 'Agenda',
@@ -28,6 +30,12 @@
             async getData() {
             const agenda = await getAgenda()
             this.items = agenda.data
+        },
+        formatDate(value){
+          moment.locale('id')
+          if(value){
+            return moment(String(value)).format('dddd, DD MMM Y')
+          }  
         }
         }
     }
