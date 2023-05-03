@@ -430,7 +430,10 @@ iframe panduan
   margin-bottom: 25px;
   border-radius: 5px;
   position: relative;
+  display: flex;
+  flex-direction: column;
   z-index: 1;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.75);
 }
 .iframe-panduan .icon {
   top: 40px;
@@ -505,6 +508,94 @@ iframe panduan
 }
 
 
+/*================================================
+iframe panduan
+=================================================*/
+
+
+.pdf-panduan {
+  background-color: var(--whiteColor);
+  transition: var(--transition);
+  padding: 40px 30px 35px 55px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.75);
+}
+.pdf-panduan .icon {
+  top: 40px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  font-size: 25px;
+  position: absolute;
+  border-radius: 50%;
+  text-align: center;
+  color: var(--whiteColor);
+  transition: var(--transition);
+  box-shadow: 5px 15px 35px rgba(38, 42, 55, 0.12);
+  background: linear-gradient(45.24deg, #9F5FF1 5.99%, #FF54B0 91.87%);
+}
+.pdf-panduan .icon i {
+  left: 0;
+  right: 0;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+.pdf-panduan .icon.bg2 {
+  background: linear-gradient(44.44deg, #FF4B3F 7.79%, #FFAC30 94.18%);
+}
+.pdf-panduan .icon.bg3 {
+  background: linear-gradient(45deg, #ED2775 0%, #FF7448 100%);
+}
+.pdf-panduan .icon.bg4 {
+  background: linear-gradient(44.44deg, #3F75FF 7.79%, #4ADEFF 94.18%);
+}
+.pdf-panduan .icon.bg5 {
+  background: linear-gradient(43.32deg, #6A55F8 14.73%, #CA48F6 86.35%, #CA48F6 86.35%);
+}
+.pdf-panduan .icon.bg6 {
+  background: linear-gradient(45deg, #6A55F8 0%, #EE6C74 100%);
+}
+.pdf-panduan h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  transition: var(--transition);
+}
+.pdf-panduan p {
+  transition: var(--transition);
+}
+.pdf-panduan::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 5px;
+  z-index: -1;
+  background: var(--gradientColor);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+.pdf-panduan:hover {
+  box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.1), 0 30px 60px -30px rgba(107, 124, 147, 0.15);
+}
+.pdf-panduan:hover .icon {
+  border-radius: 70% 30% 30% 70%/60% 40% 60% 40%;
+}
+.pdf-panduan:hover h3, .pdf-panduan:hover p {
+  color: var(--whiteColor);
+}
+.pdf-panduan:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
 
 
 
