@@ -223,8 +223,6 @@
                     </div>
                 </div>
             </div>
-            <div class="shape12"><img src="../../assets/images/shape/shape11.png" alt="shape"></div>
-        <div class="shape13"><img src="../../assets/images/shape/shape15.png" alt="shape"></div>
     </div>
     <div class="features-area ptb-100 bg-white">
             <div class="container">
