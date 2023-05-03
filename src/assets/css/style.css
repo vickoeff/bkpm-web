@@ -3674,6 +3674,11 @@ New Demo CSS
 }
 
 /*Map stytles */
+.map-cotainer {
+  position: relative;
+  z-index: 0;
+}
+
 .checkbox-wrapper {
   display: flex;
   margin-top: 2rem;

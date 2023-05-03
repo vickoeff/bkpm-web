@@ -322,6 +322,15 @@
                     max-width: unset;
                     max-height: 79px;
                 }
+
+                @media screen and (max-width: 450px) {
+                    max-width: 36px;
+
+                    &:first-child {
+                        max-width: unset;
+                        max-height: 58px;
+                    }
+                }
             }
         }
         ul {
@@ -837,8 +846,7 @@
                     }
                 }
                 .others-option {
-                    margin-left: 0;
-                    display: inline !important;   
+                    margin-left: 0;   
                     position: absolute;
                     top: 5px;
                     right: 45px;

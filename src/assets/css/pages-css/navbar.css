@@ -213,6 +213,15 @@
   max-width: unset;
   max-height: 79px;
 }
+@media screen and (max-width: 450px) {
+  .jexa-nav .navbar .navbar-brand img {
+    max-width: 36px;
+  }
+  .jexa-nav .navbar .navbar-brand img:first-child {
+    max-width: unset;
+    max-height: 58px;
+  }
+}
 .jexa-nav .navbar ul {
   padding-left: 0;
   margin-bottom: 0;
@@ -618,7 +627,6 @@
   }
   .navbar-area .jexa-nav .navbar .others-option {
     margin-left: 0;
-    display: inline !important;
     position: absolute;
     top: 5px;
     right: 45px;

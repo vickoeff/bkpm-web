@@ -1,5 +1,5 @@
 <template>
-    <div class="container pt-100 pb-100">
+    <div class="container pt-100 pb-100 map-cotainer">
         <div ref="mapContainer" style="height: 500px; width: 100%"></div>
         <div class="checkbox-wrapper">
             <div class="checkbox" @click="updateMap">
