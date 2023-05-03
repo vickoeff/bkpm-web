@@ -31,7 +31,7 @@ Gallery Area CSS
 
 .card-gallery {
   padding: 0 16px;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
 .card-gallery__inner {
   position: relative;
@@ -40,6 +40,7 @@ Gallery Area CSS
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   box-shadow: 0px 0px 10px rgba(36, 48, 88, 0.2392156863);
+  padding-bottom: 16px;
 }
 .card-gallery__inner p {
   padding: 16px;

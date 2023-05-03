@@ -25,7 +25,7 @@
                 .navbar-brand {
                     img {
                         &:first-child {
-                            display: none;
+                            display: block;
                         }
                         &:last-child {
                             display: block;
@@ -306,13 +306,30 @@
         padding: 0;
         position: inherit;
         .navbar-brand {
+            display: flex;
             font-size: inherit;
             line-height: 1;
-            padding: 0;
+            padding: 16px;
+
             img {
-                max-width: 104px;
-                &:last-child {
-                    display: none;
+                display: block;
+                max-width: 49px;
+                height: auto;
+                flex: 1;
+                margin-right: 8px;
+
+                &:first-child {
+                    max-width: unset;
+                    max-height: 79px;
+                }
+
+                @media screen and (max-width: 450px) {
+                    max-width: 36px;
+
+                    &:first-child {
+                        max-width: unset;
+                        max-height: 58px;
+                    }
                 }
             }
         }
@@ -829,8 +846,7 @@
                     }
                 }
                 .others-option {
-                    margin-left: 0;
-                    display: inline !important;   
+                    margin-left: 0;   
                     position: absolute;
                     top: 5px;
                     right: 45px;

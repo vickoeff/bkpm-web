@@ -7,6 +7,7 @@ import InitAxios from '../api';
 import store from './store';
 
 import "./assets/custom.scss";
+import 'leaflet/dist/leaflet.css';
 
 InitAxios();
 

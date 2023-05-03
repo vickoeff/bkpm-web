@@ -3,17 +3,17 @@
         <div class="container">
             <div class="footer-content">
                 <div class="row justify-content-between">
-                    <div class="col-6 col-md-3">
+                    <div class="col-12 col-md-3 order-4 order-sm-1  mt-5 mt-md-0">
                         <router-link to="/" class="logo">
-                            <img src="../../assets/bkpm/Logo_Kementerian_Investasi_BKPM_Warna_Square.png" alt="logo">
+                            <img src="../../assets/bkpm/bkpm.png" alt="logo">
                         </router-link>
                     </div>
-                    <div class="col-6 col-md-3 text-start">
+                    <div class="col-5 col-md-3 order-1 order-sm-2 text-start">
                         <h3 class="sub-tittle">Alamat</h3>
                         <p class="address">Jl. Jend. Gatot Subroto No. 44, Jakarta 12190P.O. Box 3186, Indonesia</p>
                     </div>
-                    <div class="col"></div>
-                    <div class="col-6 col-md-3">
+                    <div class="col  order-2 order-sm-3"></div>
+                    <div class="col-5 col-md-3 order-3 order-sm-4">
                         <h3 class="sub-tittle">Kontak Kami</h3>
                         <ul class="contact-person">
                             <li><i class="ri-mail-line"></i> info@bkpm.go.id</li>
@@ -24,8 +24,6 @@
                             <li><a href="https://facebook.com/" target="_blank"><i class="ri-facebook-fill"></i></a></li>
                             <li><a href="https://twitter.com/" target="_blank"><i class="ri-twitter-fill"></i></a></li>
                             <li><a href="https://linkedin.com/" target="_blank"><i class="ri-linkedin-fill"></i></a></li>
-                            <li><a href="https://messenger.com/" target="_blank"><i class="ri-messenger-fill"></i></a></li>
-                            <li><a href="https://github.com/" target="_blank"><i class="ri-github-fill"></i></a></li>
                         </ul>
                     </div>
                 </div>
