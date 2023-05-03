@@ -63,14 +63,14 @@
                                     >Profile Peserta</router-link
                                 >
                             </li>
-                            <li class="nav-item d-block d-md-none">
+                            <li class="nav-item d-block d-lg-none">
                                 <router-link to="#" class="nav-link"
                                     >Login</router-link
                                 >
                             </li>
                         </ul>
                     </div>
-                    <div class="others-option d-none d-md-block">
+                    <div class="others-option d-none d-lg-block">
                         <router-link to="#" class="default-btn"
                             >Login</router-link
                         >

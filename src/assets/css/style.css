@@ -34,6 +34,7 @@ Default CSS
   --whiteColor: #ffffff;
   --blackColor: #262A37;
   --gradientColor: linear-gradient(44.44deg, #ED2775 7.79%, #FF7448 94.18%);
+  --mainGradientColor: linear-gradient(44.44deg, #2D3B96 7.79%, #4CA85f 94.18%);
   --paragraphColor: #716c80;
   --fontFamily: "Inter", sans-serif;
 }

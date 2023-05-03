@@ -8,40 +8,42 @@
                 </div>
             </div>
             <div class="row">
-                <CardGallery 
-                    v-for="item in items" 
-                    :src="item.url_file" 
-                    :alt="item.url_file" 
+                <CardGallery
+                    v-for="item in items"
+                    :src="item.url_file"
+                    :alt="item.url_file"
                     :caption="item.caption"
                     class="col-12 col-sm-6 col-md-4"
-                />                
+                />
             </div>
             <div class="app-btn-box text-center mt-5">
-                <router-link to="/gallery" class="default-btn">Lebih Banyak</router-link>
+                <router-link to="/gallery" class="default-btn"
+                    >Lebih Banyak</router-link
+                >
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-import CardGallery from '../Gallery/CardGallery.vue';
+import { defineComponent } from "vue";
+import CardGallery from "../Gallery/CardGallery.vue";
 
-export default defineComponent ({
-    name: 'AppScreens',
+export default defineComponent({
+    name: "AppScreens",
     components: {
         CardGallery,
     },
     props: {
         items: {
             type: Array,
-            data: null
-        }
+            data: null,
+        },
     },
-})
+});
 </script>
 
 <style lang="css">
-@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.1.0-beta.1/css/lightgallery.css');
-@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.1.0-beta.1/css/lg-zoom.css');
+@import url("https://cdn.jsdelivr.net/npm/lightgallery@2.1.0-beta.1/css/lightgallery.css");
+@import url("https://cdn.jsdelivr.net/npm/lightgallery@2.1.0-beta.1/css/lg-zoom.css");
 </style>
