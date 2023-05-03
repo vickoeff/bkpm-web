@@ -14,7 +14,7 @@
                 <span class="sub-title">Peserta</span><h2>PTSP Provinsi</h2>
             </div>
             <div class="row justify-content-center mb-5" >
-                <div v-for="item in provData" :key="item.id" class="col-lg-4 col-md-6">
+                <div v-for="item in provData" :key="item.id" class="col-lg-4 col-md-6 profile-card">
                     <div class="single-blog-post">
                         <div class="image">
                             <img :src="item.tampak_depan" alt="image">
@@ -30,7 +30,7 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="pagination-area d-flex align-items-center">
                         <button :disabled="provPage == 1" @click="() => prevPage('provinsi')" class="prev page-numbers"><i class="ri-arrow-left-line"></i></button>
-                        <button v-for="page in provRenderPage" :key="page" @click="goToPage(page, 'provinsi')" class="btn nav-links">
+                        <button v-for="page in provRenderPage" :key="page" :disabled="page == '...'" @click="goToPage(page, 'provinsi')" class="btn nav-links">
                             <span  :class="[page === provPage ? 'current' : '', 'page-numbers']">{{ page }}</span>
                         </button>
                         <button :disabled="provPage >= provTotalPage" @click="() => nextPage('provinsi')" class="next page-numbers"><i class="ri-arrow-right-line"></i></button>
@@ -42,7 +42,7 @@
                 <span class="sub-title">Peserta</span><h2>PTSP Kabupaten</h2>
             </div>
             <div class="row justify-content-center mb-5">
-                <div v-for="item in kabData" :key="item.id" class="col-lg-4 col-md-6">
+                <div v-for="item in kabData" :key="item.id" class="col-lg-4 col-md-6 profile-card">
                     <div class="single-blog-post">
                         <div class="image">
                             <img :src="item.tampak_depan" alt="image">
@@ -58,7 +58,7 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="pagination-area d-flex align-items-center">
                         <button :disabled="kabPage == 1" @click="() => prevPage('kabupaten')" class="prev page-numbers"><i class="ri-arrow-left-line"></i></button>
-                        <button v-for="page in kabRenderPage" :key="page" @click="goToPage(page, 'kabupaten')" class="btn nav-links">
+                        <button v-for="page in kabRenderPage" :key="page" :disabled="page == '...'" @click="goToPage(page, 'kabupaten')" class="btn nav-links">
                             <span  :class="[page === kabPage ? 'current' : '', 'page-numbers']">{{ page }}</span>
                         </button>
                         <button :disabled="kabPage >= kabTotalPage" @click="() => nextPage('kabupaten')" class="next page-numbers"><i class="ri-arrow-right-line"></i></button>
@@ -71,7 +71,7 @@
                 <span class="sub-title">Peserta</span><h2>PTSP Kota</h2>
             </div>
             <div class="row justify-content-center mb-5">
-                <div v-for="item in kotData" :key="item.id" class="col-lg-4 col-md-6">
+                <div v-for="item in kotData" :key="item.id" class="col-lg-4 col-md-6 profile-card">
                     <div class="single-blog-post">
                         <div class="image">
                             <img :src="item.tampak_depan" alt="image">
@@ -87,7 +87,7 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="pagination-area d-flex align-items-center">
                         <button :disabled="kotaPage == 1" @click="() => prevPage('kota')" class="prev page-numbers"><i class="ri-arrow-left-line"></i></button>
-                        <button v-for="page in kotRenderPage" :key="page" @click="goToPage(page, 'kota')" class="btn nav-links">
+                        <button v-for="page in kotRenderPage" :key="page" :disabled="page == '...'" @click="goToPage(page, 'kota')" class="btn nav-links">
                             <span  :class="[page === kotaPage ? 'current' : '', 'page-numbers']">{{ page }}</span>
                         </button>
                         <button :disabled="kotaPage >= kotTotalPage" @click="() => nextPage('kota')" class="next page-numbers"><i class="ri-arrow-right-line"></i></button>
@@ -100,7 +100,7 @@
                 <span class="sub-title">Peserta</span><h2>K/L</h2>
             </div>
             <div class="row justify-content-center">
-                <div v-for="item in klData" :key="item.id" class="col-lg-4 col-md-6">
+                <div v-for="item in klData" :key="item.id" class="col-lg-4 col-md-6 profile-card">
                     <div class="single-blog-post">
                         <div class="image">
                             <img :src="item.tampak_depan" alt="image">
@@ -116,7 +116,7 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="pagination-area d-flex align-items-center">
                         <button :disabled="klPage == 1" @click="() => prevPage('kl')" class="prev page-numbers"><i class="ri-arrow-left-line"></i></button>
-                        <button v-for="page in klRenderPage" :key="page" @click="goToPage(page, 'kl')" class="btn nav-links">
+                        <button v-for="page in klRenderPage" :key="page" :disabled="page == '...'" @click="goToPage(page, 'kl')" class="btn nav-links">
                             <span  :class="[page === klPage ? 'current' : '', 'page-numbers']">{{ page }}</span>
                         </button>
                         <button :disabled="klPage >= klTotalPage" @click="() => nextPage('kl')" class="next page-numbers"><i class="ri-arrow-right-line"></i></button>

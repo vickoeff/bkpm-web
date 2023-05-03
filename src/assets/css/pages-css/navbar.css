@@ -20,7 +20,7 @@
   background-color: transparent !important;
 }
 .navbar-area.navbar-style-two .jexa-nav .navbar .navbar-brand img:first-child {
-  display: none;
+  display: block;
 }
 .navbar-area.navbar-style-two .jexa-nav .navbar .navbar-brand img:last-child {
   display: block;
@@ -197,15 +197,21 @@
   position: inherit;
 }
 .jexa-nav .navbar .navbar-brand {
+  display: flex;
   font-size: inherit;
   line-height: 1;
-  padding: 0;
+  padding: 16px;
 }
 .jexa-nav .navbar .navbar-brand img {
-  max-width: 104px;
+  display: block;
+  max-width: 49px;
+  height: auto;
+  flex: 1;
+  margin-right: 8px;
 }
-.jexa-nav .navbar .navbar-brand img:last-child {
-  display: none;
+.jexa-nav .navbar .navbar-brand img:first-child {
+  max-width: unset;
+  max-height: 79px;
 }
 .jexa-nav .navbar ul {
   padding-left: 0;

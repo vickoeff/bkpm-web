@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Navbar />
+        <Navbar class="jexa-new-navbar-area" />
         <PageTitle pageTitle="Profil Peserta" />
         <!-- <Map /> -->
         <Blog :provinsi="provinsi" :kabupaten="kabupaten" :kota="kota" :kl="kl" />

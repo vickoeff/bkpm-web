@@ -459,7 +459,7 @@ textarea.form-control {
     &::before {
         left: 0;
         right: 0;
-        top: 82px;
+        top: 111.59px;
         height: 1px;
         content: '';
         z-index: -1;
@@ -874,7 +874,7 @@ New Demo CSS
             .navbar-brand {
                 img {
                     &:first-child {
-                        display: none;
+                        display: block;
                     }
                     &:last-child {
                         display: block;
@@ -1001,7 +1001,7 @@ New Demo CSS
                         display: block;
                     }
                     &:last-child {
-                        display: none;
+                        display: block;
                     }
                 }
             }
@@ -1598,8 +1598,13 @@ New Demo CSS
 .new-app-main-banner-wrap-shape {
     position: absolute;
     left: -170px;
-    top: -185px;
+    top: -175px;
     z-index: -1;
+
+    @media screen and (max-width: 1000px) and (max-height: 858px) {
+        left: -206px;
+        top: -189px;
+    }
 }
 
 // New App Main Banner Wrap Area CSS
@@ -3658,6 +3663,17 @@ New Demo CSS
         }
     }
 }
+.profile-card {
+    padding: 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0px 0px 10px rgba(36, 48, 88, 0.2392156863);
+    }
+}
+
 .new-feedback-shape {
     position: absolute;
     right: 30px;
