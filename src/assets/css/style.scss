@@ -4149,6 +4149,32 @@ New Demo CSS
     }
 }
 
+/*Map stytles */
+.checkbox-wrapper {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+
+    .checkbox {
+        padding: 8px;
+        margin: 0 1rem;
+        color: var(--whiteColor);
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(87, 32, 54, 0.25);
+
+        &:first-child{
+            background-color: var(--mainColor);
+        }
+        &:last-child{
+            background-color: var(--secondaryColor);
+        }
+
+        label {
+            margin-left: 8px;
+        }
+    }
+}
+
 
 /* Footer Style With Black Color Area */
 .footer-area-style-with-black-color {
