@@ -2,7 +2,7 @@
     <div>
         <Navbar class="jexa-new-navbar-area" />
         <PageTitle pageTitle="Profil Peserta" />
-        <!-- <Map /> -->
+        <Map />
         <Blog :provinsi="provinsi" :kabupaten="kabupaten" :kota="kota" :kl="kl" />
         <Footer class="footer-style-two bg-black" />
     </div>
